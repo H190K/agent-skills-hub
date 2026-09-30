@@ -95,6 +95,10 @@ the gap implicit.
 
 - A failing test, crash or unexplained behaviour — the `systematic-debugging` skill's four phases
   apply before any fix is proposed.
+- Writing or changing tests — the `test-driven-development` skill's RED–GREEN–REFACTOR cycle and its
+  list of test shapes that can never fail.
+- Someone is reviewing your code and raised findings — the `code-review-reception` skill, before you
+  start implementing the list.
 - Before reporting the work as finished — the `verification-before-completion` skill states what
   counts as evidence for each kind of claim.
 - Writing the plan rather than the code — the `plan` skill.
