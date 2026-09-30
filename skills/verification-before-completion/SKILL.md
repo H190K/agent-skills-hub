@@ -1,7 +1,7 @@
 ---
 name: verification-before-completion
 description: Use when about to report work as done, fixed, passing or successful — before committing, opening a PR, or telling the user it works.
-version: 1.0.0
+version: 1.1.0
 author: adapted from obra/superpowers
 license: MIT
 platforms: [linux, macos, windows]
@@ -82,5 +82,8 @@ that turns out to be false is a broken one.
 ## Related
 
 - The `systematic-debugging` skill covers the investigation that has to happen before a fix exists.
+- The `test-driven-development` skill is how the reproduction becomes permanent: write the failing
+  test first, watch it fail against the broken version, then fix — the suite then proves the bug
+  cannot return silently.
 - The `plan` skill's self-review checklist is a plan-shaped version of this gate.
 
