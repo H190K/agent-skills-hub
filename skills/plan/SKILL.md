@@ -1,7 +1,7 @@
 ---
 name: plan
 description: Use when the user wants a plan written down instead of code changed — design work, multi-step features, or a task worth planning before touching it.
-version: 2.2.0
+version: 2.3.0
 author: adapted from obra/superpowers
 license: MIT
 platforms: [linux, macos, windows]
@@ -331,6 +331,11 @@ Every task that produces code includes the full TDD cycle:
 4. Run to verify pass
 
 Run the test, watch it fail, write the minimal code, run it again. Never write the implementation before the failing test exists.
+
+The `test-driven-development` skill carries the detail when you reach execution: what counts as failing
+*for the right reason*, the assertion shapes that can never fail (expectations computed by the code
+under test, assertions on mocks), and why "the other tests still pass" means the project's whole suite
+rather than the one file being changed.
 
 ### Frequent Commits
 
