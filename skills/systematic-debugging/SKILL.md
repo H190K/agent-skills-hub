@@ -1,7 +1,7 @@
 ---
 name: systematic-debugging
 description: Use when a bug, test failure, crash or unexpected behaviour needs fixing — especially when a fix "should have worked" but didn't, or when the temptation is to try another change and see.
-version: 1.0.0
+version: 1.1.0
 author: adapted from obra/superpowers
 license: MIT
 platforms: [linux, macos, windows]
@@ -118,6 +118,14 @@ If you notice any of these, return to Phase 1:
 - "I don't fully understand it, but this might work."
 - Proposing a list of fixes before tracing the data flow once.
 - "One more attempt" after two have already failed.
+
+## Related
+
+- **Phase 4 of this skill is only as good as its reproduction.** The `test-driven-development` skill
+  is how that reproduction is written: the failing test comes first, is watched failing against the
+  broken version, and then guards the fix permanently.
+- Before reporting the fix as done — the `verification-before-completion` skill states what counts
+  as evidence for each kind of claim.
 
 ## Quick reference
 

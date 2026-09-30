@@ -1,7 +1,7 @@
 ---
 name: blogwatcher
 description: "Use when tracking blog or RSS/Atom feeds, checking for new posts, or building a feed-monitoring routine."
-version: 2.1.0
+version: 2.2.0
 author: JulienTant (fork of Hyaxia/blogwatcher)
 license: MIT
 platforms: [linux, macos, windows]
@@ -12,6 +12,22 @@ prerequisites:
 # Blogwatcher
 
 Track blog and RSS/Atom feed updates with the `blogwatcher-cli` tool. Supports automatic feed discovery, HTML scraping fallback, OPML import, and read/unread article management.
+
+## Gotchas
+
+Read these before the commands below — they are the things that bite:
+
+- **Date filters silently drop undated articles.** `--since` and `--before` compare against an
+  article's *publication* date, so every article the feed gives no date for is excluded as soon as a
+  filter is applied. A filtered count that looks too low is usually this, not a failed scan.
+- **`--since` is inclusive, `--before` is exclusive**, and both need the `YYYY-MM-DD` form. `--since
+  2026-01-01 --before 2026-02-01` covers January only.
+- **Private and loopback feeds are refused by default** (SSRF protection). A legitimate internal feed
+  needs `--unsafe-client`, which disables the check — only use it where you control both ends.
+- **In Docker the database is lost on restart** unless `BLOGWATCHER_DB` points at a mounted volume.
+  A scan that finds everything as new on every run is this.
+- **The binary is `blogwatcher-cli`, not `blogwatcher`.** The pre-fork tool used the shorter name and
+  a different database path; see the migration note below.
 
 ## Installation
 

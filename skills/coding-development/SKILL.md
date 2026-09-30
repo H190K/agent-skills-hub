@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.3.0
+version: 1.4.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -62,7 +62,7 @@ Workstream 4: Documentation and notes
 
 When delivering code:
 
-```markdown
+````markdown
 ## File: path/to/file.py
 
 [Full file content in code block]
@@ -81,12 +81,24 @@ python file.py
 - Dependencies
 - Edge cases
 - Known limitations
-```
+````
+
+## Write the test before the fix, whenever a test is possible
+
+For any bug fix or behaviour change, a failing test comes first — see the `test-driven-development`
+skill. It is the only cheap proof that the change addresses the reported problem rather than an
+adjacent one, and it is what stops the same bug reappearing later. Where a test genuinely cannot be
+written (a one-off migration, a manual UI flow), say so in the delivery notes rather than leaving
+the gap implicit.
 
 ## Related skills
 
 - A failing test, crash or unexplained behaviour — the `systematic-debugging` skill's four phases
   apply before any fix is proposed.
+- Writing or changing tests — the `test-driven-development` skill's RED–GREEN–REFACTOR cycle and its
+  list of test shapes that can never fail.
+- Someone is reviewing your code and raised findings — the `code-review-reception` skill, before you
+  start implementing the list.
 - Before reporting the work as finished — the `verification-before-completion` skill states what
   counts as evidence for each kind of claim.
 - Writing the plan rather than the code — the `plan` skill.
