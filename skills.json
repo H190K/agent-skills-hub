@@ -1,0 +1,60 @@
+{
+  "skills": [
+    {
+      "name": "blogwatcher",
+      "description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+      "version": "2.0.0",
+      "upstream_author": "JulienTant (fork of Hyaxia/blogwatcher)",
+      "license": "MIT",
+      "files": 1
+    },
+    {
+      "name": "docx",
+      "description": "Create, read, edit, template, and review Word .docx files.",
+      "version": "1.1.0",
+      "upstream_author": "Nous Research",
+      "license": "MIT",
+      "files": 14
+    },
+    {
+      "name": "github",
+      "description": "GitHub via gh CLI: PRs, issues, reviews, repos, auth.",
+      "version": "2.0.0",
+      "upstream_author": "Ben Barclay (benbarclay), Hermes Agent",
+      "license": "MIT",
+      "files": 17
+    },
+    {
+      "name": "ocr-and-documents",
+      "description": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+      "version": "2.3.0",
+      "upstream_author": "Hermes Agent",
+      "license": "MIT",
+      "files": 4
+    },
+    {
+      "name": "plan",
+      "description": "Write a markdown plan to .hermes/plans/; no execution.",
+      "version": "2.0.0",
+      "upstream_author": "Hermes Agent (writing-craft adapted from obra/superpowers)",
+      "license": "MIT",
+      "files": 1
+    },
+    {
+      "name": "rss-feeds",
+      "description": "Read RSS, Atom, JSON feeds; discover feeds behind a page.",
+      "version": "1.0.0",
+      "upstream_author": "Teknium (teknium1), Hermes Agent",
+      "license": "MIT",
+      "files": 2
+    },
+    {
+      "name": "self-improving-cron-scout",
+      "description": "Recurring cron scouts that improve their own prompt.",
+      "version": "1.0.0",
+      "upstream_author": "Hermes Agent",
+      "license": "MIT",
+      "files": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+skills/*/__pycache__/
+skills/*/**/__pycache__/
+skills/*/.DS_Store
+skills/*/**/.DS_Store
+skills/*/.usage.json
+skills/*/.usage.json.lock
+skills/*/.bundled_manifest
+*.log
+.venv/
+node_modules/
