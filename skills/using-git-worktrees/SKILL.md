@@ -43,9 +43,9 @@ otherwise say what you are about to do and why, in one line.
 ## Step 1 — Create the workspace
 
 **Prefer a native worktree tool if your environment has one** — a tool or command whose job is to
-create and manage a workspace (`EnterWorktree`, a `--worktree` flag, an equivalent). It owns
-placement, branch creation and cleanup. Using raw git beside it produces phantom state the harness
-cannot see; this is the most common mistake in this area.
+create and manage a workspace (an enter-worktree command, a `--worktree` flag, an equivalent). It
+owns placement, branch creation and cleanup. Using raw git beside it produces phantom state the
+harness cannot see; this is the most common mistake in this area.
 
 Without a native tool, use git. Order of preference for the location:
 
