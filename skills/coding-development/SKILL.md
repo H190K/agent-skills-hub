@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.4.0
+version: 1.5.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -101,6 +101,9 @@ the gap implicit.
   start implementing the list.
 - Before reporting the work as finished — the `verification-before-completion` skill states what
   counts as evidence for each kind of claim.
+- Starting work that needs its own workspace, or finishing it — the `using-git-worktrees` and
+  `finishing-a-development-branch` skills cover isolation up front and the integration decision at
+  the end.
 - Writing the plan rather than the code — the `plan` skill.
 
 ## Common Mistakes to Avoid

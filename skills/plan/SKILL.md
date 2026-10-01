@@ -1,7 +1,7 @@
 ---
 name: plan
 description: Use when the user wants a plan written down instead of code changed — design work, multi-step features, or a task worth planning before touching it.
-version: 2.3.0
+version: 2.4.0
 author: adapted from obra/superpowers
 license: MIT
 platforms: [linux, macos, windows]
@@ -385,6 +385,10 @@ If the user says yes, implement it task by task:
 - Proceed to the next task only when both reviews approve
 
 If the runtime has no subagent capability, execute the tasks yourself in order and still run both review passes before moving on.
+
+Before the first task, and again when the last one is done, the `using-git-worktrees` and
+`finishing-a-development-branch` skills cover the two ends of execution: an isolated workspace to
+build the tasks in, and the merge/publish decision once the suite is green.
 
 ## Remember
 
