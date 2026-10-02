@@ -1,7 +1,7 @@
 ---
 name: code-review-reception
 description: Use when someone reviews your code, a reviewer or linter raises findings, or review feedback seems wrong, vague or over-scoped — how to evaluate each item on technical merit instead of agreeing or complying on reflex.
-version: 1.0.0
+version: 1.1.0
 author: adapted from obra/superpowers
 license: MIT
 platforms: [linux, macos, windows]
@@ -146,3 +146,12 @@ State the correction plainly and move on. The value is the corrected code.
 | Implementing the clear half of an ambiguous list | Clarify all items, then start |
 | Building the general version nobody calls | Grep for usage; state what you found |
 | Long apology after being wrong | One factual sentence, then the fix |
+
+## Related skills
+
+- **Getting an independent review in the first place** — the `verification-before-completion` skill,
+  which states what counts as evidence before you claim the work is done.
+- **Verifying the fix rather than assuming it** — the `systematic-debugging` skill, and
+  `test-driven-development` for turning each accepted finding into a test.
+- **The change under review still being written** — the `coding-development` skill's review checklist,
+  if you are the one reading the diff rather than answering for it.

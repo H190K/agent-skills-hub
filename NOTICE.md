@@ -9,14 +9,16 @@ Some skills originate from other authors. Their original attribution is preserve
 | Skill | Version | Original author / source | License |
 | --- | --- | --- | --- |
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
-| `code-review-reception` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
-| `coding-development` | 1.5.0 | Hasan Albehadili (h190k) | MIT |
+| `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `coding-development` | 1.6.0 | Hasan Albehadili (h190k) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `humanizer` | 1.0.0 | blader/humanizer (Siqi Chen) | MIT |
 | `plan` | 2.4.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
+| `python-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `research` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
 | `sketch` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
-| `systematic-debugging` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `systematic-debugging` | 1.2.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `test-driven-development` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `using-git-worktrees` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `verification-before-completion` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
