@@ -17,7 +17,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.7.0` |
 | [`finishing-a-development-branch`](skills/finishing-a-development-branch/SKILL.md) | Merge, publish, keep or discard finished work, and clean up the workspace. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
-| [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to a already-running process. | `1.0.0` |
+| [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
 | [`plan`](skills/plan/SKILL.md) | Write a markdown plan to `.plans/`; no execution. | `2.4.0` |
 | [`project-planning-documentation`](skills/project-planning-documentation/SKILL.md) | Plan and document software projects — proposals, README, architecture, API docs. | `1.2.0` |
 | [`python-debugging`](skills/python-debugging/SKILL.md) | Debug Python with pdb and debugpy — breakpoints, post-mortem, attaching to a live process. | `1.1.0` |
