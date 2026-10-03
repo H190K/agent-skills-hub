@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.7.0
+version: 1.8.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -105,6 +105,9 @@ the gap implicit.
   `finishing-a-development-branch` skills cover isolation up front and the integration decision at
   the end.
 - Writing the plan rather than the code — the `plan` skill.
+- A research-adjacent deliverable — a README claim, benchmark table or
+  announcement that cites outside sources — the `grounded-citations` skill's
+  ledger keeps those citations traceable to retrieval instead of memory.
 - Rewriting the prose around the code — a commit message, PR description or README — so it does not
   read as machine-written — the `humanizer` skill.
 - A bug that reading cannot explain, a value that is wrong deep in a call stack, or a process you
