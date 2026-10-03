@@ -1,7 +1,7 @@
 ---
 name: python-debugging
 description: Use when a failing test, wrong value, crash or unexplained behaviour needs a debugger rather than print statements — pdb breakpoints, post-mortem inspection of a traceback, attaching to a process that is already running, or debugging a remote or headless one.
-version: 1.0.0
+version: 1.1.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -172,3 +172,5 @@ sitting at. Expect a `Quit anyway? [y/n]` prompt if the run ends while stopped.
   Use it to find the failing path; use this one to look inside it.
 - **Turning the reproduction into a permanent test** — the `test-driven-development` skill. A debugger
   session that proved the cause should end as a test that fails without the fix.
+- **The Node.js counterpart** — the `node-debugging` skill: probe mode, the `debug>` REPL, attaching
+  to a process that is already running.

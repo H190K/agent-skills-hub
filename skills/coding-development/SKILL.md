@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.6.0
+version: 1.7.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -108,7 +108,10 @@ the gap implicit.
 - Rewriting the prose around the code — a commit message, PR description or README — so it does not
   read as machine-written — the `humanizer` skill.
 - A bug that reading cannot explain, a value that is wrong deep in a call stack, or a process you
-  cannot restart — the `python-debugging` skill covers breakpoints and post-mortem inspection.
+  cannot restart — the `python-debugging` skill covers breakpoints and post-mortem inspection; the
+  `node-debugging` skill is its Node.js counterpart (probe mode, REPL, attaching to a live process).
+- A database that fails `PRAGMA integrity_check` or opens with "database disk image is malformed" —
+  the `sqlite-recovery` skill extracts the readable data and rebuilds the database and its indexes.
 
 ## Common Mistakes to Avoid
 
