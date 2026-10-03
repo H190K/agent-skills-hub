@@ -10,14 +10,16 @@ Some skills originate from other authors. Their original attribution is preserve
 | --- | --- | --- | --- |
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
-| `coding-development` | 1.7.0 | Hasan Albehadili (h190k) | MIT |
+| `coding-development` | 1.8.0 | Hasan Albehadili (h190k) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
 | `humanizer` | 1.0.0 | blader/humanizer (Siqi Chen) | MIT |
 | `node-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `plan` | 2.4.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
+| `prompt-engineering` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `python-debugging` | 1.1.0 | Hasan Albehadili (h190k) | MIT |
-| `research` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
+| `research` | 1.3.0 | Hasan Albehadili (h190k) | MIT |
 | `sketch` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `sqlite-recovery` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `systematic-debugging` | 1.3.0 | obra/superpowers (Jesse Vincent) | MIT |

@@ -1,7 +1,7 @@
 ---
 name: research
 description: Use when comparing tools, services or APIs, checking pricing or quotas, or needing current facts and sources for a decision.
-version: 1.2.0
+version: 1.3.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -86,6 +86,10 @@ Track 5: Final synthesis and recommendation
 - Prefer current information (check dates)
 - Be practical — what actually matters for the decision at hand
 - Include links to sources when available
+- When the deliverable rests on fetched sources, the `grounded-citations` skill
+  gives each claim an inline id from a retrieval-time ledger and ends the draft
+  with a verified Sources block — use it over a bare link list whenever the
+  reader would want to check your work
 
 ## Common Mistakes to Avoid
 
