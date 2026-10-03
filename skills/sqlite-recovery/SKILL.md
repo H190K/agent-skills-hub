@@ -61,7 +61,9 @@ sqlite3 corrupt.db ".dump"    > dumped.sql              # best-effort readable r
 
 - **`.recover` is not universally available**: on a stock sqlite3 3.45.1 CLI it failed with
   `sql error: no such table: sqlite_dbpage` — the distribution build lacked the extension. `.dump`
-  still ran. Check both; if `.recover` is unavailable, `.dump` plus manual salvage is the fallback.
+  still ran on that file but recovered almost nothing (a handful of lines) — treat its output as
+  best-effort and inspect it before trusting it. Check both tools; if neither salvages the rows,
+  byte-level damage to data pages has a fallback outside SQLite only.
 - Python's `sqlite3` module will not save you here — `Connection.iterdump()` raised
   `database disk image is malformed` on the same file `.dump` handled. The CLI and the stdlib module
   are different builds with different capabilities; try both.

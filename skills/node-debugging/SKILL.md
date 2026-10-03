@@ -125,8 +125,8 @@ curl -s http://127.0.0.1:9229/json/list   # [{ "id": "...", "webSocketDebuggerUr
 node inspect 127.0.0.1:9229       # or: node inspect -p <pid>
 ```
 
-- `node inspect -p <pid>` resolves the port for you; the `host:port` (or WebSocket URL from
-  `/json/list`) form works too.
+- `node inspect -p <pid>` resolves the port for you; the `host:port` form works too (the WebSocket URL
+  from `/json/list` is what a graphical DevTools client consumes).
 - For multiple Node processes at once, start them with `NODE_OPTIONS='--inspect=0'` — the option is
   inherited by spawned children, each picks a random port, and each parent/child prints its own
   `Debugger listening on ws://127.0.0.1:<port>/<id>` to stderr. Read the URLs from the logs or
@@ -142,7 +142,7 @@ node --cpu-prof  --cpu-prof-name=run.cpuprofile  script.js   # Chromium DevTools
 node --heap-prof --heap-prof-name=run.heapsnapshot script.js # Chromium DevTools > Memory
 ```
 
-Both write the artifact next to the script by default (`--cpu-prof-dir` / `--heap-prof-dir`
+Both write the artifact into the working directory by default (`--cpu-prof-dir` / `--heap-prof-dir`
 relocate). Use these when the question is time or memory; a probe cannot answer either.
 
 ## Related skills

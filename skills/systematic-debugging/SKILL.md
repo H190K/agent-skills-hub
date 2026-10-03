@@ -1,7 +1,7 @@
 ---
 name: systematic-debugging
 description: Use when a bug, test failure, crash or unexpected behaviour needs fixing — especially when a fix "should have worked" but didn't, or when the temptation is to try another change and see.
-version: 1.2.0
+version: 1.3.0
 author: adapted from obra/superpowers
 license: MIT
 platforms: [linux, macos, windows]
@@ -128,7 +128,9 @@ If you notice any of these, return to Phase 1:
   as evidence for each kind of claim.
 - When reading the code is not enough to see the wrong value, or an exception leaves you guessing at
   the state it died in — the `python-debugging` skill covers breakpoints, post-mortem inspection of
-  the traceback, and attaching to a process you cannot restart.
+  the traceback, and attaching to a process you cannot restart. The `node-debugging` skill is its
+  Node.js counterpart; the `sqlite-recovery` skill handles a corrupted database, which is both a
+  symptom to diagnose and a state to rebuild.
 
 ## Quick reference
 
