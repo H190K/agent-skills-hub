@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **18 skills**, each self-contained and framework-neutral
+- **20 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -14,7 +14,8 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | --- | --- | --- |
 | [`blogwatcher`](skills/blogwatcher/SKILL.md) | Monitor blogs and RSS/Atom feeds via the `blogwatcher-cli` tool. | `2.2.0` |
 | [`code-review-reception`](skills/code-review-reception/SKILL.md) | Evaluate review feedback on technical merit instead of agreeing or complying on reflex. | `1.1.0` |
-| [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.8.0` |
+| [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.9.0` |
+| [`dispatching-parallel-agents`](skills/dispatching-parallel-agents/SKILL.md) | Split independent problems across one focused agent per domain, dispatched in a single batch, then integrate and verify. | `1.0.0` |
 | [`finishing-a-development-branch`](skills/finishing-a-development-branch/SKILL.md) | Merge, publish, keep or discard finished work, and clean up the workspace. | `1.0.0` |
 | [`grounded-citations`](skills/grounded-citations/SKILL.md) | Cite what you fetched — an id ledger kept at retrieval time, a generated Sources block, and a verify step for the draft. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
@@ -24,6 +25,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`prompt-engineering`](skills/prompt-engineering/SKILL.md) | Write prompts other agents can execute without questions — structure, acceptance tests, safety rules. | `1.0.0` |
 | [`python-debugging`](skills/python-debugging/SKILL.md) | Debug Python with pdb and debugpy — breakpoints, post-mortem, attaching to a live process. | `1.1.0` |
 | [`research`](skills/research/SKILL.md) | Research tools, services, APIs and pricing with parallel sourcing. | `1.3.0` |
+| [`simplify-code`](skills/simplify-code/SKILL.md) | Three narrow parallel reviewers (reuse, quality, efficiency) over the current diff, then apply only the fixes that survive verification. | `1.0.0` |
 | [`sketch`](skills/sketch/SKILL.md) | Throwaway HTML mockups — build 2–3 design variants and compare them. | `1.0.0` |
 | [`sqlite-recovery`](skills/sqlite-recovery/SKILL.md) | Salvage readable data from a corrupted SQLite database and rebuild it with working FTS5 indexes. | `1.0.0` |
 | [`systematic-debugging`](skills/systematic-debugging/SKILL.md) | Find the root cause before fixing a bug, test failure or crash. | `1.3.0` |
