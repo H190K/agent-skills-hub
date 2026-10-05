@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.9.0
+version: 1.10.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -107,6 +107,10 @@ the gap implicit.
   a single batch and integrated afterward.
 - Before reporting the work as finished — the `verification-before-completion` skill states what
   counts as evidence for each kind of claim.
+- Worked from a written plan, task by task — the `executing-plans` skill runs the loop with per-task
+  briefs, a ledger that survives compaction, and one fresh whole-branch review at the end.
+- Handing completed work to a fresh reviewer — the `requesting-code-review` skill has the
+  review-package recipe and the reviewer prompt template.
 - Starting work that needs its own workspace, or finishing it — the `using-git-worktrees` and
   `finishing-a-development-branch` skills cover isolation up front and the integration decision at
   the end.
