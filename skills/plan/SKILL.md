@@ -1,7 +1,7 @@
 ---
 name: plan
 description: Use when the user wants a plan written down instead of code changed — design work, multi-step features, or a task worth planning before touching it.
-version: 2.5.0
+version: 2.6.0
 author: adapted from obra/superpowers
 license: MIT
 platforms: [linux, macos, windows]
@@ -85,6 +85,11 @@ the signature and the test is not the plan's business.
 
 **Scope check:** if the request covers several independent subsystems, write one plan per subsystem
 rather than one long plan. Each plan should produce working, testable software on its own.
+
+**Feasibility check:** a plan de-risks execution, not feasibility. If a load-bearing question is
+still open — will the library hold up on real inputs, does the API allow this, is the latency
+tolerable — the `spike` skill's throwaway experiments settle it cheaper than a plan section that
+hopes for the best.
 
 ## Task and Step Granularity
 
