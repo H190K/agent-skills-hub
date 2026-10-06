@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.10.0
+version: 1.11.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -115,6 +115,9 @@ the gap implicit.
   `finishing-a-development-branch` skills cover isolation up front and the integration decision at
   the end.
 - Writing the plan rather than the code — the `plan` skill.
+- A feasibility unknown the docs cannot settle — "can this even work?", "does approach A
+  survive real inputs?" — the `spike` skill runs throwaway experiments that end in a verdict
+  before any real build starts.
 - A research-adjacent deliverable — a README claim, benchmark table or
   announcement that cites outside sources — the `grounded-citations` skill's
   ledger keeps those citations traceable to retrieval instead of memory.
