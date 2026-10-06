@@ -72,6 +72,12 @@ One directory per spike, named `NNN-descriptive-name`, under `spikes/` in the re
 git-ignored workspace — see below). Each spike gets a `README.md` with the question, approach,
 how to run, and the verdict.
 
+**Keep it invisible.** Spikes are experiments, not project files — they should not surface in the
+project's `git status`. Either keep the spike directories in a workspace the project already
+ignores, or add one line to `.git/info/exclude` (a `spikes/` entry hides the whole tree while
+`git status` stays clean and no tracked file changes) — it stays local and cannot be committed,
+unlike `.gitignore`. A spike whose cleanup costs a commit was overweight.
+
 **The verdict must be experienced, not asserted.** A log line saying "it works" is not a spike
 result. Default choices, in order of preference:
 
@@ -91,13 +97,6 @@ the investigation behind it.
 **Avoid anything production-shaped** unless the spike specifically requires it: build tools,
 bundlers, Docker, config systems, packaging, .env files. Hardcode everything. The moment a spike
 starts needing infrastructure, split it into smaller spikes.
-
-**Keep it invisible.** Spikes are experiments, not project files — they should not surface in the
-project's `git status`. Either keep the spike directories git-ignored permanently (the project
-already ignore-files such scratch space), or add one line to `.git/info/exclude` (measured: a
-`spikes/` entry hides the whole tree while `git status` stays clean and no tracked file changes) —
-it stays local and cannot be committed, unlike `.gitignore`. A spike whose cleanup costs a commit
-was overweight.
 
 **Parallel comparison spikes.** When comparison spikes are truly independent (no shared files,
 ports, or fixtures), dispatch one focused agent per variant in a single batch — the
