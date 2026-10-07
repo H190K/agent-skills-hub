@@ -10,7 +10,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | --- | --- | --- | --- |
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
-| `coding-development` | 1.11.0 | Hasan Albehadili (h190k) | MIT |
+| `coding-development` | 1.12.0 | Hasan Albehadili (h190k) | MIT |
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `executing-plans` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
@@ -22,7 +22,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `spike` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `prompt-engineering` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `python-debugging` | 1.1.0 | Hasan Albehadili (h190k) | MIT |
-| `research` | 1.3.0 | Hasan Albehadili (h190k) | MIT |
+| `research` | 1.4.0 | Hasan Albehadili (h190k) | MIT |
 | `requesting-code-review` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `sketch` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `simplify-code` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
@@ -31,6 +31,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `test-driven-development` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `using-git-worktrees` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `verification-before-completion` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `xurl` | 1.0.0 | xdevplatform/xurl (Santiago Medina Rolong; adapted from the repo's own agent skill) | MIT |
 
 All skills here are markdown only — no code is redistributed. If you are an author listed above and
 want your work credited differently or removed, open an issue and it will be handled.

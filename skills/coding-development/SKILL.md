@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.11.0
+version: 1.12.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -128,6 +128,9 @@ the gap implicit.
   `node-debugging` skill is its Node.js counterpart (probe mode, REPL, attaching to a live process).
 - A database that fails `PRAGMA integrity_check` or opens with "database disk image is malformed" —
   the `sqlite-recovery` skill extracts the readable data and rebuilds the database and its indexes.
+- A task that touches X/Twitter through the API — posting, reading post objects, search, timelines,
+  engagement, DMs or raw v2 endpoints — the `xurl` skill drives the official CLI, with the
+  secret-handling rules that keep credentials out of an agent session.
 
 ## Common Mistakes to Avoid
 
