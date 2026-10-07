@@ -1,7 +1,7 @@
 ---
 name: research
 description: Use when comparing tools, services or APIs, checking pricing or quotas, or needing current facts and sources for a decision.
-version: 1.3.0
+version: 1.4.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -90,6 +90,9 @@ Track 5: Final synthesis and recommendation
   gives each claim an inline id from a retrieval-time ledger and ends the draft
   with a verified Sources block — use it over a bare link list whenever the
   reader would want to check your work
+- When the task involves X/Twitter — posts, searches, timelines, engagement or
+  any v2 endpoint — the `xurl` skill drives the official CLI; it returns raw
+  post JSON you can act on directly, which web page scraping cannot
 
 ## Common Mistakes to Avoid
 
