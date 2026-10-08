@@ -1,7 +1,7 @@
 ---
 name: sketch
 description: Use when the user wants to see a design before committing to it — "show me what this screen could look like", "compare layout A vs B", "give me 2-3 takes", throwaway HTML mockups to react to rather than a built component.
-version: 1.0.0
+version: 1.1.0
 author: adapted from gsd-build/get-shit-done (MIT, Lex Christopherson)
 license: MIT
 platforms: [linux, macos, windows]
@@ -31,7 +31,9 @@ comparison is what produces a decision.
 - The design is already decided — just build it properly.
 - The user wants the production component. A sketch is throwaway by design; promoting it is a
   deliberate later step, not something the sketch quietly becomes.
-- The user wants a diagram of a system's structure — that is a different job with different output.
+- The user wants a diagram of a system's structure — that is a different job with different output —
+  the `architecture-diagram` skill produces a single dark-themed HTML+SVG architecture/topology map,
+  verified rendered before delivery.
 - The user wants a polished, shippable single artifact (a landing page, a deck). That is production
   work and should be built as such.
 

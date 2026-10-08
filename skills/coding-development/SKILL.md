@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.12.0
+version: 1.13.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -131,6 +131,9 @@ the gap implicit.
 - A task that touches X/Twitter through the API — posting, reading post objects, search, timelines,
   engagement, DMs or raw v2 endpoints — the `xurl` skill drives the official CLI, with the
   secret-handling rules that keep credentials out of an agent session.
+- The user wants a picture of a system's structure — "diagram the architecture", a cloud/infra or
+  deployment map — the `architecture-diagram` skill produces one dark-themed, self-contained
+  HTML+SVG file with working PNG/PDF export, verified rendered before delivery.
 
 ## Common Mistakes to Avoid
 

@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **24 skills**, each self-contained and framework-neutral
+- **25 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -12,9 +12,10 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 
 | Skill | What it does | Version |
 | --- | --- | --- |
+| [`architecture-diagram`](skills/architecture-diagram/SKILL.md) | Dark-themed system/cloud architecture diagrams as one self-contained HTML+SVG file with PNG/PDF export. | `1.0.0` |
 | [`blogwatcher`](skills/blogwatcher/SKILL.md) | Monitor blogs and RSS/Atom feeds via the `blogwatcher-cli` tool. | `2.2.0` |
 | [`code-review-reception`](skills/code-review-reception/SKILL.md) | Evaluate review feedback on technical merit instead of agreeing or complying on reflex. | `1.1.0` |
-| [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.12.0` |
+| [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.13.0` |
 | [`dispatching-parallel-agents`](skills/dispatching-parallel-agents/SKILL.md) | Split independent problems across one focused agent per domain, dispatched in a single batch, then integrate and verify. | `1.0.0` |
 | [`executing-plans`](skills/executing-plans/SKILL.md) | Execute a written plan inline, task by task — per-task briefs, a ledger that survives compaction, one fresh whole-branch review. | `1.0.0` |
 | [`finishing-a-development-branch`](skills/finishing-a-development-branch/SKILL.md) | Merge, publish, keep or discard finished work, and clean up the workspace. | `1.0.0` |
@@ -29,7 +30,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`research`](skills/research/SKILL.md) | Research tools, services, APIs and pricing with parallel sourcing. | `1.4.0` |
 | [`requesting-code-review`](skills/requesting-code-review/SKILL.md) | Get a fresh-context review of completed work via a subagent — review package, reviewer template, severity re-grading. | `1.0.0` |
 | [`simplify-code`](skills/simplify-code/SKILL.md) | Three narrow parallel reviewers (reuse, quality, efficiency) over the current diff, then apply only the fixes that survive verification. | `1.0.0` |
-| [`sketch`](skills/sketch/SKILL.md) | Throwaway HTML mockups — build 2–3 design variants and compare them. | `1.0.0` |
+| [`sketch`](skills/sketch/SKILL.md) | Throwaway HTML mockups — build 2–3 design variants and compare them. | `1.1.0` |
 | [`sqlite-recovery`](skills/sqlite-recovery/SKILL.md) | Salvage readable data from a corrupted SQLite database and rebuild it with working FTS5 indexes. | `1.0.0` |
 | [`systematic-debugging`](skills/systematic-debugging/SKILL.md) | Find the root cause before fixing a bug, test failure or crash. | `1.3.0` |
 | [`test-driven-development`](skills/test-driven-development/SKILL.md) | Write the failing test first; RED–GREEN–REFACTOR and the tests that can never fail. | `1.0.0` |

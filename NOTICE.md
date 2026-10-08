@@ -8,9 +8,10 @@ Some skills originate from other authors. Their original attribution is preserve
 
 | Skill | Version | Original author / source | License |
 | --- | --- | --- | --- |
+| `architecture-diagram` | 1.0.0 | Cocoon-AI/architecture-diagram-generator (Cocoon AI) | MIT |
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
-| `coding-development` | 1.12.0 | Hasan Albehadili (h190k) | MIT |
+| `coding-development` | 1.13.0 | Hasan Albehadili (h190k) | MIT |
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `executing-plans` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
@@ -24,7 +25,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `python-debugging` | 1.1.0 | Hasan Albehadili (h190k) | MIT |
 | `research` | 1.4.0 | Hasan Albehadili (h190k) | MIT |
 | `requesting-code-review` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
-| `sketch` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
+| `sketch` | 1.1.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `simplify-code` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `sqlite-recovery` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `systematic-debugging` | 1.3.0 | obra/superpowers (Jesse Vincent) | MIT |
