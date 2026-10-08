@@ -11,9 +11,9 @@ platforms: [linux, macos, windows]
 
 Produce a polished, dark-themed architecture diagram as **one self-contained HTML file** with
 inline SVG and CSS. No build step, no rendering library, no API key — write the file, open it in a
-browser. The dark engineering-console look with a JetBrains Mono grid is the house style this
-skill encodes; the judgment is in the layout rules, which exist because their violations are the
-diagrams that come back wrong.
+browser. The dark engineering-console look on a JetBrains Mono grid is the style this skill encodes;
+the layout rules carry the real judgment — each one exists because breaking it is how a diagram
+comes back wrong.
 
 ## When to use it
 
@@ -44,7 +44,7 @@ diagrams that come back wrong.
 | Message bus | `rgba(251, 146, 60, 0.3)` | `#fb923c` (orange) |
 | External | `rgba(30, 41, 59, 0.5)` | `#94a3b8` (slate) |
 
-- Font: JetBrains Mono (Google Fonts `<link>`), 11–12px names, 9px sublabels, 8–7px annotations.
+- Font: JetBrains Mono (Google Fonts `<link>`), 12px names, 9px sublabels, 8px annotations, 7px tiny labels.
 - Background: `#020617` with a subtle 40px grid pattern; cards/boundaries on `#1e293b` borders.
 - Region boundaries: dashed `8,4`, amber, `rx="12"`, transparent amber-tinted fill.
 - Security groups: dashed `4,4`, rose, transparent fill, label at top-left inside (`sg-name :port`).
@@ -256,9 +256,9 @@ the `[...]` slots are yours to fill:
 **Do not deliver an HTML diagram you have not seen rendered.** If an agent can drive a browser:
 
 1. Open the file; assert zero console errors (`window.addEventListener("error", ...)`).
-2. Open export paths at least once across the whole job — measured working: PNG capture produced a
-   2528×2618 non-blank canvas (~560 KB data URL) and jsPDF produced `application/pdf` (~8.7 MB with
-   scale 1; multi-MB output is normal — raster pixels, not vectors).
+2. Exercise the export path once in your environment — measured here as ground truth: PNG capture
+   produced a 2528×2618 non-blank canvas (~560 KB data URL) and jsPDF produced `application/pdf`
+   (~8.7 MB at scale 1; multi-MB output is normal — raster pixels, not vectors).
 3. Read the layout as numbers: label endpoints vs box edges, legend Y vs boundary bottoms, bus Y
    within its gap. Screenshot the finished state.
 
@@ -274,14 +274,14 @@ bump a version, recompute the integrity hash from the new file; never copy a has
 
 Measurables and limits, from actually running it:
 
-- PNG capture works from `file://`; JPEG for PDF embedding, PNG for images; both need the
-  `viewBox` content to be plain SVG — `<foreignObject>` renders inconsistently (avoid).
+- PNG capture works from `file://`. Keep the SVG to plain shapes and `<text>` — `<foreignObject>`
+  renders inconsistently in html2canvas.
 - Clipboard write needs **user focus** on the page: from an unfocused/automated tab it rejects with
   `NotAllowedError: Document is not focused` — the button still works for a human whose tab is
   focused, but **PNG download is the path that always works in an agent session**; use it to
   hand the user a real file.
-- The capture excludes the toolbar and uses `getBoundingClientRect()`, so scrolling never skewers
-  the crop; `scale: 2` is the default, 3–4 buys resolution for print.
+- The capture excludes the toolbar and crops via `getBoundingClientRect()`, so scroll position
+  never skews the crop; `scale: 2` is the default, 3–4 buys resolution for print.
 - The user's connection must reach cdn.jsdelivr.net for the toolbar (the diagram itself renders
   fine without it; export buttons then show ✗). Font loads from Google Fonts; with neither, the
   page falls back to system monospace. Prefer **plain-CSS-only, no-JS diagrams** when the user asks
@@ -296,8 +296,6 @@ Measurables and limits, from actually running it:
 - Multi-MB PDFs are expected — the PDF is a rasterized PNG, not vector.
 - The clipboard path requires page focus (see Verification); a human at the browser gets working
   Copy, but downloadPNG is the reliable handoff — produce a file the user can open right away.
-- Keep every CSS declaration on one line. The generated page is an artifact whose source users may
-  edit — compact CSS reads like a style sheet, not a config dump.
 
 ## Attribution
 
