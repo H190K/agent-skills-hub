@@ -80,7 +80,8 @@ Measured behavior (v0.21.4):
 
 - Auto-pick: API when `OPENAI_API_KEY` is set, otherwise the browser engine.
   Browser works for GPT (ChatGPT web) and Gemini (gemini.google.com cookie
-  mode); Claude and Codex models are API-only.
+  mode); Claude and Grok models are API-only — the full API target list is in
+  `oracle --help --verbose`.
 - Model families currently supported: GPT-5.5/5.4/5.2/5.1, GPT-5.6, Gemini 3.x,
   Claude 4.x; the default is `gpt-5.5-pro`.
 - `--browser-thinking-time <level>` (hidden flag — not in plain `--help`; it
