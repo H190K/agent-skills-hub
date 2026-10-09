@@ -69,7 +69,9 @@ Measured behavior (v0.21.4):
 - Files over 1 MB are rejected with a hard error listing the offenders; raise
   the cap via `ORACLE_MAX_FILE_SIZE_BYTES` or `--max-file-size-bytes` only when
   a large fixture is genuinely needed.
-- Zero matches or a zero-byte total selection abort before any model call.
+- A pattern that matches nothing aborts before any model call with
+  "No files matched the provided --file patterns" — a misspelled glob costs
+  nothing, but check the spelling anyway.
 - Dotfiles need an explicit dot-segment in the pattern, e.g. `--file ".github/**"`.
 - Keep total input under ~196k tokens — `--files-report` shows the per-file spend
   before you commit. Never attach `.env`, keys, or tokens; redact first.

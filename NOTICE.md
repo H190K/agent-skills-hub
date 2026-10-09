@@ -11,7 +11,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `architecture-diagram` | 1.0.0 | Cocoon-AI/architecture-diagram-generator (Cocoon AI) | MIT |
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
-| `coding-development` | 1.13.0 | Hasan Albehadili (h190k) | MIT |
+| `coding-development` | 1.14.0 | Hasan Albehadili (h190k) | MIT |
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `executing-plans` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
