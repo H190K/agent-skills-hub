@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.13.0
+version: 1.14.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -99,6 +99,9 @@ the gap implicit.
   list of test shapes that can never fail.
 - Someone is reviewing your code and raised findings — the `code-review-reception` skill, before you
   start implementing the list.
+- A stubborn bug or a high-stakes design where a second model's opinion is worth real context — the
+  `oracle` skill sends your prompt plus selected files to GPT/Gemini/Claude in one shot; treat its
+  advice like any other review finding.
 - A cleanup pass over your own recent changes before merging, or a request to "simplify" them —
   the `simplify-code` skill runs three narrow parallel reviewers (reuse, quality, efficiency),
   aggregates, and applies only what survives.
