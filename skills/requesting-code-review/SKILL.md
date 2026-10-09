@@ -1,7 +1,7 @@
 ---
 name: requesting-code-review
 description: Use when a meaningful chunk of work is done or nearly done — before merging, before continuing to the next task, or when stuck — to get a fresh-context review of the diff instead of re-reading your own changes with your own blind spots.
-version: 1.0.0
+version: 1.1.0
 author: adapted from obra/superpowers (MIT)
 license: MIT
 platforms: [linux, macos, windows]
@@ -266,3 +266,7 @@ For each issue:
   decides when per-agent review is worth it versus one review of the whole.
 - The `executing-plans` skill makes this review its final gate and splits it
   into per-task ranges.
+- When neither a subagent nor a fresh self-pass gives enough confidence — a
+  stubborn bug, a high-stakes design, a second opinion from a different model
+  family — the `oracle` skill sends the same review package to GPT/Gemini/Claude
+  with real file context through the Oracle CLI.
