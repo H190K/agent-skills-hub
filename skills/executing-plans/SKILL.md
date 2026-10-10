@@ -1,7 +1,7 @@
 ---
 name: executing-plans
 description: Use when an implementation plan exists and you are executing it inline, task by task, yourself — when no subagent-per-task process is in play or the user chose inline execution; keeps the task brief, the RED-GREEN gate, the ledger, and the final fresh review in one loop.
-version: 1.0.0
+version: 1.1.0
 author: adapted from obra/superpowers (MIT)
 license: MIT
 platforms: [linux, macos, windows]
@@ -202,9 +202,10 @@ LOG="$WORKSPACE/task-$TASK-tests.log"
 LEDGER="$WORKSPACE/progress.md"
 if eval "$CMD" > "$LOG" 2>&1; then
   tail -5 "$LOG"
+  LAST="$(grep -v '^[[:space:]]*$' "$LOG" | tail -1)"
   printf 'Task %s: complete (commits %s..%s, tests: %s → %s)\n' "$TASK" \
     "$(git rev-parse --short=7 "$BASE")" "$(git rev-parse --short=7 HEAD)" "$CMD" \
-    "$(grep -v '^[[:space:]]*$' "$LOG" | tail -1)" >> "$LEDGER"
+    "${LAST:-(no output)}" >> "$LEDGER"
 else
   tail -5 "$LOG"
   echo "tests failed: Task $TASK NOT recorded (full output: $LOG)"
