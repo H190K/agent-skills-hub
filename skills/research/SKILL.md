@@ -1,7 +1,7 @@
 ---
 name: research
 description: Use when comparing tools, services or APIs, checking pricing or quotas, or needing current facts and sources for a decision.
-version: 1.4.0
+version: 1.5.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -93,6 +93,9 @@ Track 5: Final synthesis and recommendation
 - When the task involves X/Twitter — posts, searches, timelines, engagement or
   any v2 endpoint — the `xurl` skill drives the official CLI; it returns raw
   post JSON you can act on directly, which web page scraping cannot
+- When the task needs current weather, forecasts, or sunrise/sunset for one or
+  more places, the `weather` skill gets it in one curl from wttr.in — no API
+  key, with the response formats and resolution gotchas already mapped
 
 ## Common Mistakes to Avoid
 
