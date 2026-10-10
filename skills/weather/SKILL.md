@@ -141,13 +141,14 @@ Compose one line, then eyeball the result before scripting it further:
 ```bash
 curl -fsS --max-time 20 -A curl/8.5 \
   'https://wttr.in/Baghdad?format=%l:+%c+%C,+%t,+feels+%f,+rain+%p,+wind+%w'
-# → Baghdad: 🌤️  Partly Cloudy, +31°C, feels +28°C, rain 0.0mm, wind ↓19km/h
+# → Baghdad: 🌤️  Partly Cloudy , +31°C, feels +28°C, rain 0.0mm, wind ↓19km/h
+#   (note the space before the comma — gotcha 8 below)
 ```
 
 ## One-line recipes
 
 ```bash
-# All recipes: no key, safe from any shell with curl. Repeatably:
+# All recipes: no key, safe from any shell with curl. Prefix used throughout:
 CURL="curl -fsS --max-time 20 -A curl/8.5"
 
 # Current conditions, one line
@@ -167,9 +168,10 @@ $CURL 'https://wttr.in/Baghdad?format=%l:+sunrise+%S,+sunset+%s'
 
 # Rain risk across today (slot 900 = 09:00 … 2100 = 21:00)
 $CURL 'https://wttr.in/Baghdad?format=j1' | python3 -c \
-  'import json,sys; d=json.load(sys.stdin)
-   for h in d["weather"][0]["hourly"]:
-       print(h["time"], h["tempC"], h["chanceofrain"])'
+  'import json,sys
+d=json.load(sys.stdin)
+for h in d["weather"][0]["hourly"]:
+    print(h["time"], h["tempC"], h["chanceofrain"])'
 ```
 
 ## Rules
@@ -181,9 +183,10 @@ $CURL 'https://wttr.in/Baghdad?format=j1' | python3 -c \
   when a full view was asked for — and state the resolved place (from
   `nearest_area`) in the answer.
 - Values are strings; cast before arithmetic.
-- On failure: `curl --fail` and the `location not found` body prefix mean the
-  location string is hopeless — retry with a corrected or `,CC`-disambiguated
-  query. Service slow or down: same paths on `wttr.is`.
+- On failure: a hopeless location string makes `curl -f` exit non-zero (code
+  22) on the HTTP 500; without `-f`, detect it by the `location not found`
+  body prefix. Retry with a corrected or `,CC`-disambiguated query. Service
+  slow or down: same paths on `wttr.is`.
 
 ## Related skills
 
