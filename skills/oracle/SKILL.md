@@ -84,10 +84,12 @@ Measured behavior (v0.21.4):
   `oracle --help --verbose`.
 - Model families currently supported: GPT-5.5/5.4/5.2/5.1, GPT-5.6, Gemini 3.x,
   Claude 4.x; the default is `gpt-5.5-pro`.
-- `--browser-thinking-time <level>` (hidden flag — not in plain `--help`; it
-  *is* in `oracle --debug-help`) sets picker effort for Thinking/Pro browser
-  targets: `light, standard, extended, extra-high, pro, heavy`. An invalid value
-  fails closed with the accepted list.
+- `--browser-thinking-time <level>` sets picker effort for Thinking/Pro browser
+  targets: `light, standard, extended, extra-high, pro, heavy` (the ChatGPT UI
+  aliases `instant, medium, high, xhigh` also parse). In v0.21.4 the flag is
+  hidden from *both* `--help` and `--debug-help`; the accepted list surfaces
+  only in the fail-closed error a bad value provokes — an invalid value costs
+  nothing to send, so probe with one to see the list.
 - `--browser-research search|deep` activates Web Search / Deep Research in the
   browser conversation; only when explicitly wanted.
 - API preflight before a paid run:
