@@ -26,9 +26,11 @@ completion signal someone actually watches, and a receipt to audit afterwards.
 ## Install and authenticate (once, in the foreground)
 
 - `claude` — `npm install -g @anthropic-ai/claude-code`. Non-interactive form:
-  `claude --print` (`-p`), prompt passed as an argument or via stdin. Auth is
-  per-user; there is no per-worker home mechanism — run workers under the
-  account you authorized and no other.
+  `claude --print` (`-p`), prompt passed as an argument or via stdin.
+  Worker-scoped identity (measured): `CLAUDE_CONFIG_DIR="$HOME/.claude-worker"`
+  relocates the whole config — a fresh dir reports "Not logged in" and gets its
+  own `.claude.json`; authorize it once with `claude auth login` (or
+  `claude setup-token` for a long-lived token), in the foreground.
 - `codex` — `npm install -g @openai/codex`; requires Node >= 24 (npm refuses
   older node with `EBADDEVENGINES`). Non-interactive form: `codex exec`, which
   reads the prompt from stdin when it is missing or a lone `-`.
@@ -36,12 +38,15 @@ completion signal someone actually watches, and a receipt to audit afterwards.
 - `opencode` — `curl -fsSL https://opencode.ai/install | bash` (installer drops
   the binary in `~/.opencode/bin`) or `npm install -g opencode-ai`
   (Node >= 24). Non-interactive form: `opencode run`, which reads the prompt
-  from stdin; `--session <id>` / `-c` resume one.
+  from stdin; `--session <id>` / `-c` resume one. Credentials live in
+  `$XDG_DATA_HOME/opencode/auth.json` (default `~/.local/share/opencode/auth.json`);
+  point `XDG_DATA_HOME` at a worker-only dir to isolate them (measured:
+  `opencode auth list` reads the relocated path).
 
-Codex worker auth home — the login is an interactive foreground step, never
-backgrounded; never let a worker inherit ambient credentials from your own
-`~/.codex` (codex scopes both the credential file and the keyring by
-`CODEX_HOME`):
+Isolate every worker's identity from your own login — codex via `CODEX_HOME`,
+claude via `CLAUDE_CONFIG_DIR`, opencode via `XDG_DATA_HOME`. The login is an
+interactive foreground step, never backgrounded. Codex example (it scopes both
+the credential file and the keyring by `CODEX_HOME`):
 
 ```bash
 CODEX_WORKER_HOME="$HOME/.codex-worker"
@@ -153,9 +158,10 @@ Measured against real binaries: `claude` 2.1.285, `codex` 0.134.0,
 `$PROMPT`; every form writes a log next to the work and echoes the PID.
 
 ```bash
-# Claude: --print is non-interactive (no PTY); prompt via stdin
+# Claude: --print is non-interactive (no PTY); prompt via stdin; worker-scoped identity
 cd "$WT"
-nohup claude --permission-mode bypassPermissions --print \
+nohup env CLAUDE_CONFIG_DIR="$HOME/.claude-worker" \
+  claude --permission-mode bypassPermissions --print \
   <"$PROMPT" >worker.log 2>&1 &
 echo "claude worker pid: $!"
 ```
@@ -174,9 +180,10 @@ echo "codex worker pid: $!"
 ```bash
 # opencode: run is non-interactive; piped stdin starts the session (measured:
 # the control run without a message errors with "You must provide a message
-# or a command")
+# or a command"); worker-scoped credentials dir
 cd "$WT"
-nohup opencode run <"$PROMPT" >worker.log 2>&1 &
+nohup env XDG_DATA_HOME="$HOME/.opencode-worker-share" \
+  opencode run <"$PROMPT" >worker.log 2>&1 &
 echo "opencode worker pid: $!"
 ```
 
