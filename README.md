@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **27 skills**, each self-contained and framework-neutral
+- **28 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -13,16 +13,17 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | Skill | What it does | Version |
 | --- | --- | --- |
 | [`architecture-diagram`](skills/architecture-diagram/SKILL.md) | Dark-themed system/cloud architecture diagrams as one self-contained HTML+SVG file with PNG/PDF export. | `1.0.0` |
+| [`background-coding-agents`](skills/background-coding-agents/SKILL.md) | Run the coding-agent CLIs (Anthropic's `claude`, OpenAI's `codex`, `opencode`) as unattended one-shot workers — isolated worktrees, per-agent auth homes, prompt files, provenance receipts. | `1.0.0` |
 | [`blogwatcher`](skills/blogwatcher/SKILL.md) | Monitor blogs and RSS/Atom feeds via the `blogwatcher-cli` tool. | `2.2.0` |
 | [`code-review-reception`](skills/code-review-reception/SKILL.md) | Evaluate review feedback on technical merit instead of agreeing or complying on reflex. | `1.1.0` |
-| [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.14.0` |
+| [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.15.0` |
 | [`dispatching-parallel-agents`](skills/dispatching-parallel-agents/SKILL.md) | Split independent problems across one focused agent per domain, dispatched in a single batch, then integrate and verify. | `1.0.0` |
 | [`executing-plans`](skills/executing-plans/SKILL.md) | Execute a written plan inline, task by task — per-task briefs, a ledger that survives compaction, one fresh whole-branch review. | `1.1.0` |
 | [`finishing-a-development-branch`](skills/finishing-a-development-branch/SKILL.md) | Merge, publish, keep or discard finished work, and clean up the workspace. | `1.0.0` |
 | [`grounded-citations`](skills/grounded-citations/SKILL.md) | Cite what you fetched — an id ledger kept at retrieval time, a generated Sources block, and a verify step for the draft. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
 | [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
-| [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.0.0` |
+| [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.1.0` |
 | [`plan`](skills/plan/SKILL.md) | Write a markdown plan to `.plans/`; no execution. | `2.6.0` |
 | [`project-planning-documentation`](skills/project-planning-documentation/SKILL.md) | Plan and document software projects — proposals, README, architecture, API docs. | `1.2.0` |
 | [`spike`](skills/spike/SKILL.md) | Throwaway experiments that answer a feasibility question with a verdict before any real build. | `1.0.0` |
