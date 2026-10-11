@@ -1,7 +1,7 @@
 ---
 name: oracle
 description: Use when a second model should review a diff, debug a stubborn failure, pressure-test a design, or sanity-check a refactor — install and drive @steipete/oracle, a CLI that bundles your prompt plus selected repo files into a one-shot ChatGPT/OpenAI/Gemini/Claude request.
-version: 1.0.0
+version: 1.1.0
 author: adapted from steipete/oracle (Peter Steinberger, MIT)
 license: MIT
 platforms: [linux, macos, windows]
@@ -29,9 +29,12 @@ oracle --version
 ```
 
 - Without a global install, prefix every command with `npx -y @steipete/oracle`.
-- Default target is `gpt-5.5-pro`. Without `OPENAI_API_KEY`, runs default to the
-  browser engine (automated ChatGPT web); with the key set, they default to the
-  API engine — pass `--engine` explicitly when the default is not what you want.
+- Default target is `gpt-5.5-pro`. If you omit `--engine`, Oracle still picks a
+  route — `ORACLE_ENGINE` env (or the `engine` setting in Oracle's config)
+  first, then `api` when `OPENAI_API_KEY` is set, otherwise the browser engine
+  (automated ChatGPT/Gemini web). Pass `--engine` explicitly whenever the
+  default is not what you want: an omitted engine is a route choice, not a
+  neutral one.
 - `oracle doctor` and `oracle doctor --providers` report provider readiness and
   routing without printing secrets.
 
@@ -39,6 +42,8 @@ oracle --version
 
 1. Pick the smallest file set that still contains the truth.
 2. Preview the payload and token spend with `--dry-run summary --files-report`.
+   `--dry-run` takes `summary` (default), `json` or `full`; `full` prints the
+   resolved route plus the exact composer JSON and text that would be sent.
 3. Send the real run; give it a memorable `--slug`.
 4. If it detaches or times out, **reattach to the stored session — never re-run**.
 
@@ -95,6 +100,24 @@ Measured behavior (v0.21.4):
 - API preflight before a paid run:
   `oracle doctor --providers --models gpt-5.4,claude-4.6-sonnet` then
   `oracle --route --model gpt-5.4`.
+
+## Provenance — requested vs. delivered
+
+A consult is worth keeping only if the record says what actually ran. Report
+the request and the delivery separately:
+
+- Requested: engine, model, effort (`--browser-thinking-time`), files.
+- Observed: the resolved route, session id, the effective picker target, and
+  any deviation from the request.
+- Anything unobserved is unknown, not satisfied.
+
+Measured trap (v0.21.4): `--dry-run full` in browser mode resolves
+`target=GPT-5.5` for `--model gpt-5.5-pro` — a requested model maps to a
+*picker target*, and a picker label only proves UI selection, not what the
+server executed. A preview's predicted route is likewise not execution
+evidence, and a completed answer cannot prove an effort constraint on its
+own. Never silently reduce a requested model or effort to fit the route: if
+the route cannot honor the request, say so and stop.
 
 ## Sessions: reattach, never duplicate
 
@@ -155,6 +178,33 @@ oracle --models "gpt-5.5-pro,gemini-3-pro" --allow-partial --write-output review
 
 `--allow-partial` exits 0 when at least one model succeeds and writes
 per-model outputs (`review.md` plus `review.<model>.md` files).
+
+## Through MCP
+
+The package ships a second binary, `oracle-mcp`, a stdio MCP server. Two
+helpers print ready-made wiring snippets for two of the coding agents:
+`oracle bridge codex-config` (Codex CLI MCP config) and `oracle bridge
+claude-config` (Anthropic's claude CLI `.mcp.json`); `oracle bridge
+doctor` checks the browser bridge first.
+
+Its `consult` tool mirrors the CLI flags — schema measured in v0.21.4:
+
+- `engine` (`api` | `browser`) and `model` behave like the CLI flags; `models`
+  fans out (API only).
+- Browser-only controls ride on the call: `browserThinkingTime`,
+  `browserAttachments` (`auto|never|always` — `always` uploads real files,
+  `never` pastes contents inline), `browserArchive` (`auto|always|never`),
+  `browserModelLabel`, `browserModelStrategy`, `browserResearchMode`
+  (`search|deep`), `browserFollowUps`.
+- `dryRun: true` previews; `waitForCompletion: false` detaches and returns a
+  `sessionId` immediately (blocking on the separate `wait` tool); `slug`
+  names the session for later lookup.
+- If a call detaches or times out, inspect its stored session before
+  retrying — never duplicate a running consult.
+
+The `sessions` tool takes an id or slug; `detail: true` includes the stored
+metadata and the original request — the evidence source when you need to
+report what a detached call actually did.
 
 ## Agent-session gotchas
 
