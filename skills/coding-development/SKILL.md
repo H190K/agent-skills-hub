@@ -1,7 +1,7 @@
 ---
 name: coding-development
 description: Use when reviewing or refactoring code, debugging a failing program, or building a script, app, API or integration — any task that ends in changed code.
-version: 1.14.0
+version: 1.15.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -108,6 +108,9 @@ the gap implicit.
 - Multiple unrelated failures at once — different test files, different subsystems — the
   `dispatching-parallel-agents` skill turns them into one focused agent per domain, dispatched in
   a single batch and integrated afterward.
+- A job too long to sit through — a feature build, a large refactor, an issue-to-PR loop — the
+  `background-coding-agents` skill runs the coding-agent CLIs as unattended one-shot workers in
+  isolated worktrees with receipts and completion signals.
 - Before reporting the work as finished — the `verification-before-completion` skill states what
   counts as evidence for each kind of claim.
 - Worked from a written plan, task by task — the `executing-plans` skill runs the loop with per-task
