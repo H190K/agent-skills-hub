@@ -24,7 +24,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
 | [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
 | [`mcporter`](skills/mcporter/SKILL.md) | Drive MCP servers from the shell — list tools, one-shot calls, OAuth seeding, the `serve` bridge, typed clients, record/replay. | `1.0.0` |
-| [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.1.0` |
+| [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.2.0` |
 | [`plan`](skills/plan/SKILL.md) | Write a markdown plan to `.plans/`; no execution. | `2.6.0` |
 | [`project-planning-documentation`](skills/project-planning-documentation/SKILL.md) | Plan and document software projects — proposals, README, architecture, API docs. | `1.2.0` |
 | [`spike`](skills/spike/SKILL.md) | Throwaway experiments that answer a feasibility question with a verdict before any real build. | `1.0.0` |

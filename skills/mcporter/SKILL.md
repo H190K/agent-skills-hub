@@ -2,7 +2,7 @@
 name: mcporter
 description: Use when driving MCP servers from the shell — list tools, call one tool once (stdio or HTTP), read resources, complete or seed OAuth, bridge servers behind one `mcporter serve` endpoint, record/replay MCP traffic, or emit typed clients. Covers selector syntax, argument styles, the config-file stdio-cwd gotcha, exit-code behavior, and daemon/keep-alive wiring.
 version: 1.0.0
-author: rewritten from openclaw/mcporter (Peter Steinberger, MIT) and the tool's own docs
+author: adapted from the openclaw mcporter skill (OpenClaw Foundation, MIT; verified against openclaw/mcporter's own docs and CLI)
 license: MIT
 platforms: [linux, macos, windows]
 ---
