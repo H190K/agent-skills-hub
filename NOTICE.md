@@ -19,6 +19,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
 | `humanizer` | 1.0.0 | blader/humanizer (Siqi Chen) | MIT |
 | `node-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
+| `mcporter` | 1.0.0 | openclaw/mcporter (Peter Steinberger; rewritten from the tool's own docs and its measured CLI) | MIT |
 | `oracle` | 1.1.0 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
 | `plan` | 2.6.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
