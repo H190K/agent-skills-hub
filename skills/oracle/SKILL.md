@@ -1,7 +1,7 @@
 ---
 name: oracle
 description: Use when a second model should review a diff, debug a stubborn failure, pressure-test a design, or sanity-check a refactor — install and drive @steipete/oracle, a CLI that bundles your prompt plus selected repo files into a one-shot ChatGPT/OpenAI/Gemini/Claude request.
-version: 1.1.0
+version: 1.2.0
 author: adapted from steipete/oracle (Peter Steinberger, MIT)
 license: MIT
 platforms: [linux, macos, windows]
@@ -91,10 +91,13 @@ Measured behavior (v0.21.4):
   Claude 4.x; the default is `gpt-5.5-pro`.
 - `--browser-thinking-time <level>` sets picker effort for Thinking/Pro browser
   targets: `light, standard, extended, extra-high, pro, heavy` (the ChatGPT UI
-  aliases `instant, medium, high, xhigh` also parse). In v0.21.4 the flag is
-  hidden from *both* `--help` and `--debug-help`; the accepted list surfaces
+  aliases `instant, medium, high, xhigh` also parse). In v0.21.4–v0.21.5 the flag
+  is hidden from *both* `--help` and `--debug-help`; the accepted list surfaces
   only in the fail-closed error a bad value provokes — an invalid value costs
-  nothing to send, so probe with one to see the list.
+  nothing to send, so probe with one to see the list (the 0.21.5 text:
+  `Thinking time must be one of "light", "standard", "extended", "extra-high",
+  "pro", "heavy", or a ChatGPT UI alias like "instant", "medium", "high", or
+  "xhigh".`).
 - `--browser-research search|deep` activates Web Search / Deep Research in the
   browser conversation; only when explicitly wanted.
 - API preflight before a paid run:
@@ -111,12 +114,12 @@ the request and the delivery separately:
   any deviation from the request.
 - Anything unobserved is unknown, not satisfied.
 
-Measured trap (v0.21.4): `--dry-run full` in browser mode resolves
-`target=GPT-5.5` for `--model gpt-5.5-pro` — a requested model maps to a
-*picker target*, and a picker label only proves UI selection, not what the
-server executed. A preview's predicted route is likewise not execution
-evidence, and a completed answer cannot prove an effort constraint on its
-own. Never silently reduce a requested model or effort to fit the route: if
+Measured trap (v0.21.4, re-verified unchanged in v0.21.5): `--dry-run full` in
+browser mode resolves `target=GPT-5.5` for `--model gpt-5.5-pro` — a requested
+model maps to a *picker target*, and a picker label only proves UI selection,
+not what the server executed. A preview's predicted route is likewise not
+execution evidence, and a completed answer cannot prove an effort constraint on
+its own. Never silently reduce a requested model or effort to fit the route: if
 the route cannot honor the request, say so and stop.
 
 ## Sessions: reattach, never duplicate
