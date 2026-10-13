@@ -24,13 +24,13 @@ Some skills originate from other authors. Their original attribution is preserve
 | `oracle` | 1.2.0 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
 | `plan` | 2.6.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
-| `spike` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `prompt-engineering` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `python-debugging` | 1.1.0 | Hasan Albehadili (h190k) | MIT |
-| `research` | 1.5.0 | Hasan Albehadili (h190k) | MIT |
 | `requesting-code-review` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
-| `sketch` | 1.1.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
+| `research` | 1.5.0 | Hasan Albehadili (h190k) | MIT |
 | `simplify-code` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
+| `sketch` | 1.1.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
+| `spike` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `sqlite-recovery` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `systematic-debugging` | 1.3.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `test-driven-development` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
