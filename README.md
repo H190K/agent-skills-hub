@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **29 skills**, each self-contained and framework-neutral
+- **30 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -22,18 +22,19 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`finishing-a-development-branch`](skills/finishing-a-development-branch/SKILL.md) | Merge, publish, keep or discard finished work, and clean up the workspace. | `1.0.0` |
 | [`grounded-citations`](skills/grounded-citations/SKILL.md) | Cite what you fetched — an id ledger kept at retrieval time, a generated Sources block, and a verify step for the draft. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
-| [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
 | [`mcporter`](skills/mcporter/SKILL.md) | Drive MCP servers from the shell — list tools, one-shot calls, OAuth seeding, the `serve` bridge, typed clients, record/replay. | `1.0.0` |
+| [`merge-reconciler`](skills/merge-reconciler/SKILL.md) | Resolve a merge conflict between two agents' branches as a neutral third party — hunk classes, impartiality contract, both-sides-preserved verification, rerere for repeat conflicts. | `1.0.0` |
+| [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
 | [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.2.0` |
 | [`plan`](skills/plan/SKILL.md) | Write a markdown plan to `.plans/`; no execution. | `2.6.0` |
 | [`project-planning-documentation`](skills/project-planning-documentation/SKILL.md) | Plan and document software projects — proposals, README, architecture, API docs. | `1.2.0` |
-| [`spike`](skills/spike/SKILL.md) | Throwaway experiments that answer a feasibility question with a verdict before any real build. | `1.0.0` |
 | [`prompt-engineering`](skills/prompt-engineering/SKILL.md) | Write prompts other agents can execute without questions — structure, acceptance tests, safety rules. | `1.0.0` |
 | [`python-debugging`](skills/python-debugging/SKILL.md) | Debug Python with pdb and debugpy — breakpoints, post-mortem, attaching to a live process. | `1.1.0` |
-| [`research`](skills/research/SKILL.md) | Research tools, services, APIs and pricing with parallel sourcing. | `1.5.0` |
 | [`requesting-code-review`](skills/requesting-code-review/SKILL.md) | Get a fresh-context review of completed work via a subagent — review package, reviewer template, severity re-grading. | `1.1.0` |
+| [`research`](skills/research/SKILL.md) | Research tools, services, APIs and pricing with parallel sourcing. | `1.5.0` |
 | [`simplify-code`](skills/simplify-code/SKILL.md) | Three narrow parallel reviewers (reuse, quality, efficiency) over the current diff, then apply only the fixes that survive verification. | `1.0.0` |
 | [`sketch`](skills/sketch/SKILL.md) | Throwaway HTML mockups — build 2–3 design variants and compare them. | `1.1.0` |
+| [`spike`](skills/spike/SKILL.md) | Throwaway experiments that answer a feasibility question with a verdict before any real build. | `1.0.0` |
 | [`sqlite-recovery`](skills/sqlite-recovery/SKILL.md) | Salvage readable data from a corrupted SQLite database and rebuild it with working FTS5 indexes. | `1.0.0` |
 | [`systematic-debugging`](skills/systematic-debugging/SKILL.md) | Find the root cause before fixing a bug, test failure or crash. | `1.3.0` |
 | [`test-driven-development`](skills/test-driven-development/SKILL.md) | Write the failing test first; RED–GREEN–REFACTOR and the tests that can never fail. | `1.0.0` |
