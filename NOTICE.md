@@ -17,6 +17,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `executing-plans` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
+| `huggingface-hub` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against huggingface_hub 2.2.0) | MIT |
 | `humanizer` | 1.0.0 | blader/humanizer (Siqi Chen) | MIT |
 | `mcporter` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its mcporter skill, rewritten against openclaw/mcporter's own docs and its measured CLI) | MIT |
 | `merge-reconciler` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
