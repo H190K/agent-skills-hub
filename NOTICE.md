@@ -24,7 +24,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `minecraft-modpack-server` | 1.0.0 | Hasan Albehadili (h190k; rewritten from a local library draft — behavior verified live against NeoForge 21.11.48 and mrpack-install 0.16.10) | MIT |
 | `nano-pdf` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against nano-pdf 0.2.1) | MIT |
 | `node-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
-| `oracle` | 1.2.0 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
+| `oracle` | 1.3.0 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
 | `plan` | 2.6.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
 | `prompt-engineering` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
