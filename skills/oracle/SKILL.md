@@ -1,7 +1,7 @@
 ---
 name: oracle
 description: Use when a second model should review a diff, debug a stubborn failure, pressure-test a design, or sanity-check a refactor — install and drive @steipete/oracle, a CLI that bundles your prompt plus selected repo files into a one-shot ChatGPT/OpenAI/Gemini/Claude request.
-version: 1.2.0
+version: 1.3.0
 author: adapted from steipete/oracle (Peter Steinberger, MIT)
 license: MIT
 platforms: [linux, macos, windows]
@@ -92,12 +92,24 @@ Measured behavior (v0.21.4):
 - `--browser-thinking-time <level>` sets picker effort for Thinking/Pro browser
   targets: `light, standard, extended, extra-high, pro, heavy` (the ChatGPT UI
   aliases `instant, medium, high, xhigh` also parse). In v0.21.4–v0.21.5 the flag
-  is hidden from *both* `--help` and `--debug-help`; the accepted list surfaces
-  only in the fail-closed error a bad value provokes — an invalid value costs
-  nothing to send, so probe with one to see the list (the 0.21.5 text:
+  is hidden from *both* `--help` and `--debug-help`; from v0.21.6 it is listed in
+  `--debug-help` (with the level names printed inline) while staying out of plain
+  `--help`. The accepted list also surfaces in the fail-closed error a bad value
+  provokes — an invalid value costs nothing to send, so probe with one to see the
+  list (the string is identical in v0.21.5 and v0.21.6:
   `Thinking time must be one of "light", "standard", "extended", "extra-high",
   "pro", "heavy", or a ChatGPT UI alias like "instant", "medium", "high", or
   "xhigh".`).
+- Flags that joined `--debug-help` with v0.21.6, for long browser waits and
+  synced/fiddly Chrome setups: `--browser-attachment-timeout`,
+  `--browser-max-concurrent-tabs <n>` (soft limit per manual-login profile,
+  default 3), the cookie plumbing (`--browser-cookie-names`,
+  `--browser-inline-cookies <jsonOrBase64>`, `--browser-inline-cookies-file
+  <path>`, `--browser-allow-cookie-errors`), and
+  `--browser-manual-login-profile-dir <path>`. The recheck/reattach family
+  (`--browser-recheck-delay`, `--browser-recheck-timeout`,
+  `--browser-reuse-wait`, `--browser-auto-reattach-*`) predates this release —
+  read `--debug-help` on the installed version for the full current list.
 - `--browser-research search|deep` activates Web Search / Deep Research in the
   browser conversation; only when explicitly wanted.
 - API preflight before a paid run:
