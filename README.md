@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **32 skills**, each self-contained and framework-neutral
+- **33 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -25,6 +25,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
 | [`mcporter`](skills/mcporter/SKILL.md) | Drive MCP servers from the shell — list tools, one-shot calls, OAuth seeding, the `serve` bridge, typed clients, record/replay. | `1.0.0` |
 | [`merge-reconciler`](skills/merge-reconciler/SKILL.md) | Resolve a merge conflict between two agents' branches as a neutral third party — hunk classes, impartiality contract, both-sides-preserved verification, rerere for repeat conflicts. | `1.0.0` |
+| [`minecraft-modpack-server`](skills/minecraft-modpack-server/SKILL.md) | Host a modded Minecraft server — Java per game version, NeoForge/Forge installer flags, the EULA gate, server.properties and JVM tuning, Modrinth `.mrpack` server builds, backups, first-boot verification. | `1.0.0` |
 | [`nano-pdf`](skills/nano-pdf/SKILL.md) | Edit pages of existing PDFs and insert style-matched slides with natural-language prompts via the nano-pdf CLI (Gemini image generation) — page-number semantics, fail-closed matrix, raster/OCR trade-offs measured live. | `1.0.0` |
 | [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
 | [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.2.0` |
