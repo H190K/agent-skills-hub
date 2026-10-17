@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **33 skills**, each self-contained and framework-neutral
+- **34 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -12,6 +12,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 
 | Skill | What it does | Version |
 | --- | --- | --- |
+| [`actionlint`](skills/actionlint/SKILL.md) | Lint GitHub Actions workflows statically — expression/matrix typo checks, runner labels, `with:` validation, shellcheck/pyflakes integration, exit codes; measured live on actionlint 1.7.12. | `1.0.0` |
 | [`architecture-diagram`](skills/architecture-diagram/SKILL.md) | Dark-themed system/cloud architecture diagrams as one self-contained HTML+SVG file with PNG/PDF export. | `1.0.0` |
 | [`background-coding-agents`](skills/background-coding-agents/SKILL.md) | Run the coding-agent CLIs (Anthropic's `claude`, OpenAI's `codex`, `opencode`) as unattended one-shot workers — isolated worktrees, per-agent auth homes, prompt files, provenance receipts. | `1.0.0` |
 | [`blogwatcher`](skills/blogwatcher/SKILL.md) | Monitor blogs and RSS/Atom feeds via the `blogwatcher-cli` tool. | `2.2.0` |

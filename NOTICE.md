@@ -8,6 +8,7 @@ Some skills originate from other authors. Their original attribution is preserve
 
 | Skill | Version | Original author / source | License |
 | --- | --- | --- | --- |
+| `actionlint` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against actionlint 1.7.12) | MIT |
 | `architecture-diagram` | 1.0.0 | Cocoon-AI/architecture-diagram-generator (Cocoon AI) | MIT |
 | `background-coding-agents` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its coding-agent skill) | MIT |
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
