@@ -38,6 +38,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `sqlite-recovery` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `systematic-debugging` | 1.3.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `test-driven-development` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `typos` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against typos-cli 1.51.1) | MIT |
 | `using-git-worktrees` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `verification-before-completion` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `weather` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its weather skill) | MIT |
