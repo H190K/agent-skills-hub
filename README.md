@@ -24,6 +24,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`grounded-citations`](skills/grounded-citations/SKILL.md) | Cite what you fetched — an id ledger kept at retrieval time, a generated Sources block, and a verify step for the draft. | `1.0.0` |
 | [`huggingface-hub`](skills/huggingface-hub/SKILL.md) | Drive the Hugging Face Hub CLI (`hf`): downloads with cache/dry-run/local-dir semantics, metadata reads, parquet and SQL dataset queries, resumable uploads, token and cache hygiene. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
+| [`jq`](skills/jq/SKILL.md) | Query and reshape JSON on the command line — stream model, the `//` alternative, exit codes, argument passing, conversion filters; measured live on jq 1.8.2. | `1.0.0` |
 | [`mcporter`](skills/mcporter/SKILL.md) | Drive MCP servers from the shell — list tools, one-shot calls, OAuth seeding, the `serve` bridge, typed clients, record/replay. | `1.0.0` |
 | [`merge-reconciler`](skills/merge-reconciler/SKILL.md) | Resolve a merge conflict between two agents' branches as a neutral third party — hunk classes, impartiality contract, both-sides-preserved verification, rerere for repeat conflicts. | `1.0.0` |
 | [`minecraft-modpack-server`](skills/minecraft-modpack-server/SKILL.md) | Host a modded Minecraft server — Java per game version, NeoForge/Forge installer flags, the EULA gate, server.properties and JVM tuning, Modrinth `.mrpack` server builds, backups, first-boot verification. | `1.0.0` |
