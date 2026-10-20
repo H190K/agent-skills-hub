@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **35 skills**, each self-contained and framework-neutral
+- **37 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -21,6 +21,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`dispatching-parallel-agents`](skills/dispatching-parallel-agents/SKILL.md) | Split independent problems across one focused agent per domain, dispatched in a single batch, then integrate and verify. | `1.0.0` |
 | [`executing-plans`](skills/executing-plans/SKILL.md) | Execute a written plan inline, task by task — per-task briefs, a ledger that survives compaction, one fresh whole-branch review. | `1.1.0` |
 | [`finishing-a-development-branch`](skills/finishing-a-development-branch/SKILL.md) | Merge, publish, keep or discard finished work, and clean up the workspace. | `1.0.0` |
+| [`gron`](skills/gron/SKILL.md) | Make JSON greppable — flatten to one statement per leaf, then extract, delete, edit and rebuild with `gron -u`, diff two files path-wise; NDJSON stream, value extraction, full exit codes; measured live on gron 0.7.1. | `1.0.0` |
 | [`grounded-citations`](skills/grounded-citations/SKILL.md) | Cite what you fetched — an id ledger kept at retrieval time, a generated Sources block, and a verify step for the draft. | `1.0.0` |
 | [`huggingface-hub`](skills/huggingface-hub/SKILL.md) | Drive the Hugging Face Hub CLI (`hf`): downloads with cache/dry-run/local-dir semantics, metadata reads, parquet and SQL dataset queries, resumable uploads, token and cache hygiene. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
