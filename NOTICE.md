@@ -17,6 +17,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `executing-plans` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `gron` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against gron 0.7.1) | MIT |
 | `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
 | `huggingface-hub` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against huggingface_hub 2.2.0) | MIT |
 | `humanizer` | 1.0.0 | blader/humanizer (Siqi Chen) | MIT |
