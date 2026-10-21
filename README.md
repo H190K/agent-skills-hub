@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **37 skills**, each self-contained and framework-neutral
+- **38 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -44,6 +44,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`sqlite-recovery`](skills/sqlite-recovery/SKILL.md) | Salvage readable data from a corrupted SQLite database and rebuild it with working FTS5 indexes. | `1.0.0` |
 | [`systematic-debugging`](skills/systematic-debugging/SKILL.md) | Find the root cause before fixing a bug, test failure or crash. | `1.3.0` |
 | [`test-driven-development`](skills/test-driven-development/SKILL.md) | Write the failing test first; RED–GREEN–REFACTOR and the tests that can never fail. | `1.0.0` |
+| [`trace-mcp`](skills/trace-mcp/SKILL.md) | Precomputed code intelligence over MCP — symbol search, outlines, call/import graphs, change impact, quality gates, security scans; presets/deferral surface and load-tools-then-batch doctrine; measured live on trace-mcp 3.38.0. | `1.0.0` |
 | [`typos`](skills/typos/SKILL.md) | Source-code spell checker — scan identifiers, strings, comments and filenames, auto-fix or diff, per-word and pattern-based ignores, exit codes 0/2/64/78; measured live on typos-cli 1.51.1. | `1.0.0` |
 | [`using-git-worktrees`](skills/using-git-worktrees/SKILL.md) | Isolate feature work in its own workspace and verify a clean baseline first. | `1.0.0` |
 | [`verification-before-completion`](skills/verification-before-completion/SKILL.md) | Check what counts as evidence before reporting work as done. | `1.1.0` |
