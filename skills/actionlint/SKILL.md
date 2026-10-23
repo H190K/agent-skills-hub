@@ -1,6 +1,6 @@
 ---
 name: actionlint
-description: Use when writing, reviewing or committing GitHub Actions workflow files — a workflow won't start, runs-on labels or matrix values look wrong, an action's `with:` inputs need checking, `run:` shell or python steps need a local lint pass, or CI should gate workflows before merge. Covers actionlint 1.7.12: install, exit codes 0/1/2/3, bundled runner-label and popular-actions metadata checks, shellcheck/pyflakes integration, actionlint.yaml config. All behaviors measured live.
+description: "Use when writing, reviewing or committing GitHub Actions workflow files — a workflow won't start, runs-on labels or matrix values look wrong, an action's `with:` inputs need checking, `run:` shell or python steps need a local lint pass, or CI should gate workflows before merge. Covers actionlint 1.7.12: install, exit codes 0/1/2/3, bundled runner-label and popular-actions metadata checks, shellcheck/pyflakes integration, actionlint.yaml config. All behaviors measured live."
 version: 1.0.0
 author: H190K
 license: MIT

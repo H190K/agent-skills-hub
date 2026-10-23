@@ -1,6 +1,6 @@
 ---
 name: humanizer
-description: Use when editing, reviewing or rewriting prose so it stops reading as AI-generated: before publishing docs, posts, README files, PR descriptions or emails, or whenever text smells like a chatbot wrote it.
+description: "Use when editing, reviewing or rewriting prose so it stops reading as AI-generated: before publishing docs, posts, README files, PR descriptions or emails, or whenever text smells like a chatbot wrote it."
 version: 1.0.0
 author: adapted from blader/humanizer (Siqi Chen), MIT
 license: MIT

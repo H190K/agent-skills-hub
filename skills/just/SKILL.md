@@ -1,6 +1,6 @@
 ---
 name: just
-description: Use when writing, debugging, or reviewing a justfile — the casey/just command runner: recipe syntax, /bin/sh per-line semantics, parameters and defaults, variables and dotenv, platform attributes, inspection flags (--list, --evaluate, --dump, --show), --fmt, modules and imports. Cover the portability traps between the current release and older distro builds.
+description: "Use when writing, debugging, or reviewing a justfile — the casey/just command runner: recipe syntax, /bin/sh per-line semantics, parameters and defaults, variables and dotenv, platform attributes, inspection flags (--list, --evaluate, --dump, --show), --fmt, modules and imports. Cover the portability traps between the current release and older distro builds."
 version: 1.0.0
 author: original
 license: MIT
