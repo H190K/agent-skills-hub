@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **39 skills**, each self-contained and framework-neutral
+- **40 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -25,6 +25,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`grounded-citations`](skills/grounded-citations/SKILL.md) | Cite what you fetched — an id ledger kept at retrieval time, a generated Sources block, and a verify step for the draft. | `1.0.0` |
 | [`huggingface-hub`](skills/huggingface-hub/SKILL.md) | Drive the Hugging Face Hub CLI (`hf`): downloads with cache/dry-run/local-dir semantics, metadata reads, parquet and SQL dataset queries, resumable uploads, token and cache hygiene. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
+| [`hyperfine`](skills/hyperfine/SKILL.md) | Benchmark commands from the terminal — mean ± σ, comparisons measured against the first command, parameter sweeps and grids, peak RSS and CPU-time rows, JSON schema v2 with per-run measurements; the 2.x default is shell-less execution, so shell syntax needs `-S`. Measured live on hyperfine 2.0.0. | `1.0.0` |
 | [`jq`](skills/jq/SKILL.md) | Query and reshape JSON on the command line — stream model, the `//` alternative, exit codes, argument passing, conversion filters; measured live on jq 1.8.2. | `1.0.0` |
 | [`just`](skills/just/SKILL.md) | Save and run project commands from a justfile — recipe syntax, per-line `/bin/sh` semantics, parameters and variables, dotenv (off by default), attributes and modules, `--fmt`/`--list`/`--evaluate`/`--dump` inspection; release 1.59 vs distro 1.21 traps. | `1.0.0` |
 | [`mcporter`](skills/mcporter/SKILL.md) | Drive MCP servers from the shell — list tools, one-shot calls, OAuth seeding, the `serve` bridge, typed clients, record/replay. | `1.0.0` |
