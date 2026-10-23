@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **38 skills**, each self-contained and framework-neutral
+- **39 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -26,12 +26,13 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`huggingface-hub`](skills/huggingface-hub/SKILL.md) | Drive the Hugging Face Hub CLI (`hf`): downloads with cache/dry-run/local-dir semantics, metadata reads, parquet and SQL dataset queries, resumable uploads, token and cache hygiene. | `1.0.0` |
 | [`humanizer`](skills/humanizer/SKILL.md) | Strip AI writing tells from prose without changing what it says. | `1.0.0` |
 | [`jq`](skills/jq/SKILL.md) | Query and reshape JSON on the command line — stream model, the `//` alternative, exit codes, argument passing, conversion filters; measured live on jq 1.8.2. | `1.0.0` |
+| [`just`](skills/just/SKILL.md) | Save and run project commands from a justfile — recipe syntax, per-line `/bin/sh` semantics, parameters and variables, dotenv (off by default), attributes and modules, `--fmt`/`--list`/`--evaluate`/`--dump` inspection; release 1.59 vs distro 1.21 traps. | `1.0.0` |
 | [`mcporter`](skills/mcporter/SKILL.md) | Drive MCP servers from the shell — list tools, one-shot calls, OAuth seeding, the `serve` bridge, typed clients, record/replay. | `1.0.0` |
 | [`merge-reconciler`](skills/merge-reconciler/SKILL.md) | Resolve a merge conflict between two agents' branches as a neutral third party — hunk classes, impartiality contract, both-sides-preserved verification, rerere for repeat conflicts. | `1.0.0` |
 | [`minecraft-modpack-server`](skills/minecraft-modpack-server/SKILL.md) | Host a modded Minecraft server — Java per game version, NeoForge/Forge installer flags, the EULA gate, server.properties and JVM tuning, Modrinth `.mrpack` server builds, backups, first-boot verification. | `1.0.0` |
 | [`nano-pdf`](skills/nano-pdf/SKILL.md) | Edit pages of existing PDFs and insert style-matched slides with natural-language prompts via the nano-pdf CLI (Gemini image generation) — page-number semantics, fail-closed matrix, raster/OCR trade-offs measured live. | `1.0.0` |
 | [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
-| [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.3.0` |
+| [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.3.1` |
 | [`plan`](skills/plan/SKILL.md) | Write a markdown plan to `.plans/`; no execution. | `2.6.0` |
 | [`project-planning-documentation`](skills/project-planning-documentation/SKILL.md) | Plan and document software projects — proposals, README, architecture, API docs. | `1.2.0` |
 | [`prompt-engineering`](skills/prompt-engineering/SKILL.md) | Write prompts other agents can execute without questions — structure, acceptance tests, safety rules. | `1.0.0` |
