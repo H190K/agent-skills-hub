@@ -1,7 +1,7 @@
 ---
 name: oracle
 description: Use when a second model should review a diff, debug a stubborn failure, pressure-test a design, or sanity-check a refactor — install and drive @steipete/oracle, a CLI that bundles your prompt plus selected repo files into a one-shot ChatGPT/OpenAI/Gemini/Claude request.
-version: 1.3.0
+version: 1.3.1
 author: adapted from steipete/oracle (Peter Steinberger, MIT)
 license: MIT
 platforms: [linux, macos, windows]
@@ -92,7 +92,8 @@ Measured behavior (v0.21.4):
 - `--browser-thinking-time <level>` sets picker effort for Thinking/Pro browser
   targets: `light, standard, extended, extra-high, pro, heavy` (the ChatGPT UI
   aliases `instant, medium, high, xhigh` also parse). In v0.21.4–v0.21.5 the flag
-  is hidden from *both* `--help` and `--debug-help`; from v0.21.6 it is listed in
+  is hidden from *both* `--help` and `--debug-help`; from v0.21.6 through
+  v0.22.0 it is listed in
   `--debug-help` (with the level names printed inline) while staying out of plain
   `--help`. The accepted list also surfaces in the fail-closed error a bad value
   provokes — an invalid value costs nothing to send, so probe with one to see the
@@ -110,6 +111,8 @@ Measured behavior (v0.21.4):
   (`--browser-recheck-delay`, `--browser-recheck-timeout`,
   `--browser-reuse-wait`, `--browser-auto-reattach-*`) predates this release —
   read `--debug-help` on the installed version for the full current list.
+  v0.22.0 adds `--browser-no-focus` / `--no-browser-no-focus` (keep Chrome in
+  the background during launch, new tabs, and send — or let it come forward).
 - `--browser-research search|deep` activates Web Search / Deep Research in the
   browser conversation; only when explicitly wanted.
 - API preflight before a paid run:
@@ -126,7 +129,7 @@ the request and the delivery separately:
   any deviation from the request.
 - Anything unobserved is unknown, not satisfied.
 
-Measured trap (v0.21.4, re-verified unchanged in v0.21.5): `--dry-run full` in
+Measured trap (v0.21.4, re-verified unchanged through v0.22.0): `--dry-run full` in
 browser mode resolves `target=GPT-5.5` for `--model gpt-5.5-pro` — a requested
 model maps to a *picker target*, and a picker label only proves UI selection,
 not what the server executed. A preview's predicted route is likewise not
@@ -200,7 +203,10 @@ The package ships a second binary, `oracle-mcp`, a stdio MCP server. Two
 helpers print ready-made wiring snippets for two of the coding agents:
 `oracle bridge codex-config` (Codex CLI MCP config) and `oracle bridge
 claude-config` (Anthropic's claude CLI `.mcp.json`); `oracle bridge
-doctor` checks the browser bridge first.
+doctor` checks the browser bridge first. From v0.22.0, `oracle bridge
+--help` lists these subcommands; on 0.21.6 they run but are unlisted
+(the help shows only `host`, whose counterpart `client` points a box at a
+remote oracle host).
 
 Its `consult` tool mirrors the CLI flags — schema measured in v0.21.4:
 

@@ -22,12 +22,13 @@ Some skills originate from other authors. Their original attribution is preserve
 | `huggingface-hub` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against huggingface_hub 2.2.0) | MIT |
 | `humanizer` | 1.0.0 | blader/humanizer (Siqi Chen) | MIT |
 | `jq` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against jq 1.8.2) | MIT |
+| `just` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against just 1.59.0 and the Ubuntu 1.21.0 distro build) | MIT |
 | `mcporter` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its mcporter skill, rewritten against openclaw/mcporter's own docs and its measured CLI) | MIT |
 | `merge-reconciler` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `minecraft-modpack-server` | 1.0.0 | Hasan Albehadili (h190k; rewritten from a local library draft — behavior verified live against NeoForge 21.11.48 and mrpack-install 0.16.10) | MIT |
 | `nano-pdf` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against nano-pdf 0.2.1) | MIT |
 | `node-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
-| `oracle` | 1.3.0 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
+| `oracle` | 1.3.1 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
 | `plan` | 2.6.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
 | `prompt-engineering` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
