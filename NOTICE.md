@@ -16,6 +16,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `coding-development` | 1.15.0 | Hasan Albehadili (h190k) | MIT |
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `executing-plans` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `fd` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against fd 10.5.0, cross-checked on 9.0.0, 8.7.1 and the Ubuntu distro fd-find 9.0.0 build; upstream dual MIT OR Apache-2.0) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `gron` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against gron 0.7.1) | MIT |
 | `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
