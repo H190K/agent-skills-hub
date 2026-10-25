@@ -43,6 +43,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `sqlite-recovery` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `systematic-debugging` | 1.3.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `test-driven-development` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `tokei` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against tokei 15.0.0, cross-checked on 14.0.0 and 13.0.0 conda-forge builds; upstream dual MIT OR Apache-2.0, holder "Erin Power" from LICENCE-MIT) | MIT |
 | `trace-mcp` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against trace-mcp 3.38.0) | MIT |
 | `typos` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against typos-cli 1.51.1) | MIT |
 | `using-git-worktrees` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
