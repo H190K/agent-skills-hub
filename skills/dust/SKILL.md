@@ -4,7 +4,7 @@ version: 1.0.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
-description: "Use when a per-directory disk-usage view is needed — hunting space hogs, cleaning a tree, or reading disk state faster than du. Covers the biggest-at-bottom default ordering, the 20-row piped display cap with uncapped totals, filter semantics (-X path prune vs -v/-e regex on node paths, display-only -z, hidden-file -i), size modes (blocks, apparent-size, filecount, filetime), the per-extension view, JSON output shape, and version walls back to 0.8.6. Measured live."
+description: "Use when a per-directory disk usage view is needed — hunting space hogs, cleaning a tree, or reading disk state faster than du. Covers the biggest-at-bottom default ordering, the 20-row piped display cap with uncapped totals, filter semantics (-X path prune vs -v/-e regex on node paths, display-only -z, hidden-file -i), size modes (blocks, apparent-size, filecount, filetime), the per-extension view, JSON output shape, and version walls back to 0.8.6. Measured live."
 ---
 
 # dust — readable disk usage in one bar-chart tree
@@ -35,7 +35,7 @@ cross-checked on **1.1.2** and **0.8.6**; version lines call out where the surfa
    aggregate are still computed over the full tree — so a script that reads the rows can miss
    entries the numbers already include. Measured: a 41-directory tree printed exactly 21 lines.
    Use `-n <N>` when scripting (`-n 0` prints only the total row).
-3. **Sizes are disk-block usage, not file length.** A 7-byte file displays as 4.0Ki on this
+3. **Sizes are allocated blocks, not file length.** A 7-byte file displays as 4.0Ki on this
    probe. `-s` switches to apparent size (actual file bytes: that same file shows 7B); `-o b`
    prints exact allocated bytes (no Ki/Mi rounding); `-o si` uses powers of 1000.
 
