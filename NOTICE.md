@@ -15,6 +15,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `coding-development` | 1.15.0 | Hasan Albehadili (h190k) | MIT |
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `dust` | 1.0.0 | bootandy/dust (bootandy + nebkor; original — behavior verified live against dust 1.2.6, cross-checked on 1.1.2 and 0.8.6; upstream licence Apache-2.0, skill text is original) | MIT |
 | `executing-plans` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `fd` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against fd 10.5.0, cross-checked on 9.0.0, 8.7.1 and the Ubuntu distro fd-find 9.0.0 build; upstream dual MIT OR Apache-2.0) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
