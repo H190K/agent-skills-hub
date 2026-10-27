@@ -38,6 +38,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `python-debugging` | 1.1.0 | Hasan Albehadili (h190k) | MIT |
 | `requesting-code-review` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `research` | 1.5.0 | Hasan Albehadili (h190k) | MIT |
+| `sd` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against sd v1.1.0, cross-checked on the v1.0.0 release and the Ubuntu 24.04 distro sd 1.0.0-2 build; upstream MIT, holder "Gregory" from the source-tarball LICENSE) | MIT |
 | `simplify-code` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `sketch` | 1.1.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `spike` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |

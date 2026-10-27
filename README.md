@@ -42,6 +42,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`python-debugging`](skills/python-debugging/SKILL.md) | Debug Python with pdb and debugpy — breakpoints, post-mortem, attaching to a live process. | `1.1.0` |
 | [`requesting-code-review`](skills/requesting-code-review/SKILL.md) | Get a fresh-context review of completed work via a subagent — review package, reviewer template, severity re-grading. | `1.1.0` |
 | [`research`](skills/research/SKILL.md) | Research tools, services, APIs and pricing with parallel sourcing. | `1.5.0` |
+| [`sd`](skills/sd/SKILL.md) | Find-and-replace in files and piped streams — the low-drama sed alternative with in-place-by-default edits (no `-i`, no prompt), the 1.1 line-by-line default vs `-A` whole-file mode, capture-group adjacency errors, the version lie on the 1.1.0 release binaries and fail-closed batch semantics. Measured live on sd v1.1.0. | `1.0.0` |
 | [`simplify-code`](skills/simplify-code/SKILL.md) | Three narrow parallel reviewers (reuse, quality, efficiency) over the current diff, then apply only the fixes that survive verification. | `1.0.0` |
 | [`sketch`](skills/sketch/SKILL.md) | Throwaway HTML mockups — build 2–3 design variants and compare them. | `1.1.0` |
 | [`spike`](skills/spike/SKILL.md) | Throwaway experiments that answer a feasibility question with a verdict before any real build. | `1.0.0` |
