@@ -28,6 +28,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `just` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against just 1.59.0 and the Ubuntu 1.21.0 distro build) | MIT |
 | `mcporter` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its mcporter skill, rewritten against openclaw/mcporter's own docs and its measured CLI) | MIT |
 | `merge-reconciler` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
+| `miller` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against miller 6.22.0, cross-checked on the Ubuntu 24.04 miller 6.11.0 build; upstream BSD-2-Clause, skill text is original) | MIT |
 | `minecraft-modpack-server` | 1.0.0 | Hasan Albehadili (h190k; rewritten from a local library draft — behavior verified live against NeoForge 21.11.48 and mrpack-install 0.16.10) | MIT |
 | `nano-pdf` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against nano-pdf 0.2.1) | MIT |
 | `node-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
