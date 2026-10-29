@@ -440,7 +440,7 @@ check("follow-lands", rc == 0 and '"set": true' in o, o[:120])
 rc, o, e = xh("--no-check-status", "--follow", "--max-redirects", "1", f":{P}/redirect/3")
 check("max-redirects-rc6", rc == 6 and "Too many redirects" in e, f"rc={rc} err={e[:120]}")
 # 12. forced compression on the wire at -xx
-rc, o, _ = xh("-b", "-xx", f":{P}/echo", "a=1")
+rc, o, _ = xh("-I", "-b", "-xx", f":{P}/echo", "a=1")
 check("compress-xx", '"Content-Encoding": "deflate"' in o, o[:200])
 # 13. netrc matches the host string you typed
 nrc1 = os.path.join(d, "netrc.localhost"); open(nrc1, "w").write("machine localhost login netu password netp\n")
