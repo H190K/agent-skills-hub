@@ -56,6 +56,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`using-git-worktrees`](skills/using-git-worktrees/SKILL.md) | Isolate feature work in its own workspace and verify a clean baseline first. | `1.0.0` |
 | [`verification-before-completion`](skills/verification-before-completion/SKILL.md) | Check what counts as evidence before reporting work as done. | `1.1.0` |
 | [`weather`](skills/weather/SKILL.md) | Current weather, forecasts and sunrise/sunset in one no-key curl — formats, JSON field map, resolution gotchas measured live. | `1.0.0` |
+| [`xh`](skills/xh/SKILL.md) | HTTP requests with HTTPie ergonomics from one static binary — the script-safety rules (piped stdin is the body, `-I` required), `http://` default for every host, status classes exit as 3/4/5 with timeout=2 and redirect-exhaustion=6, piped `-m` prints the body, host-string netrc matching, plaintext-credential sessions, curl translation. Measured live on xh 0.26.3. | `1.0.0` |
 | [`xurl`](skills/xurl/SKILL.md) | Drive the official X API CLI — posts, search, timelines, engagement, DMs, encrypted chat, raw v2 endpoints — credential-safe in an agent session. | `1.0.0` |
 
 ## Install
