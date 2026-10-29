@@ -4,7 +4,7 @@ version: 1.0.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
-description: "Use when a script, cron job, or agent shell needs to make HTTP calls - JSON and form requests, auth, cookies, sessions, redirects, timeouts, downloads, or curl translation. xh speaks HTTPie syntax from one static Rust binary; this skill encodes its measured traps on 0.26.3: a non-TTY stdin silently becomes the request body (always pass -I in scripts), every host defaults to http:// not https://, status classes 3/4/5 exit as 3/4/5, timeout exits 2, redirect exhaustion exits 6, piped -m prints the body instead of metadata, and netrc matches the host string you typed."
+description: "Use when a script, cron job, or agent shell needs to make HTTP calls - JSON or form requests, auth, cookies, sessions, redirects, timeouts, or downloads. xh speaks HTTPie syntax from one static Rust binary; measured traps on 0.26.3: a non-TTY stdin silently becomes the request body (pass -I in scripts), every host defaults to http:// not https://, status classes exit 3/4/5, timeout exits 2, redirect exhaustion 6, piped -m prints the body, netrc matches the typed host string."
 ---
 
 # xh — HTTPie-compatible HTTP requests from one static binary
@@ -439,10 +439,7 @@ rc, o, e = xh("--no-check-status", "--follow", "--max-redirects", "1", f":{P}/re
 check("max-redirects-rc6", rc == 6 and "Too many redirects" in e, f"rc={rc} err={e[:120]}")
 # 12. forced compression on the wire at -xx
 rc, o, _ = xh("-b", "-xx", f":{P}/echo", "a=1")
-try:
-    check("compress-xx", json.loads(o)["headers"].get("Content-Encoding") == "deflate", o[:200])
-except Exception as ex:
-    check("compress-xx", False, str(ex))
+check("compress-xx", '"Content-Encoding": "deflate"' in o, o[:200])
 # 13. netrc matches the host string you typed
 nrc1 = os.path.join(d, "netrc.localhost"); open(nrc1, "w").write("machine localhost login netu password netp\n")
 rc, o, _ = xh("-b", f":{P}/whoami", env={"NETRC": nrc1})
