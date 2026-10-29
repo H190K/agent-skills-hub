@@ -4,7 +4,7 @@ version: 1.0.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
-description: "Use when a script, cron job, or agent shell needs to make HTTP calls - JSON or form requests, auth, cookies, sessions, redirects, timeouts, or downloads. xh speaks HTTPie syntax from one static Rust binary; measured traps on 0.26.3: a non-TTY stdin silently becomes the request body (pass -I in scripts), every host defaults to http:// not https://, status classes exit 3/4/5, timeout exits 2, redirect exhaustion 6, piped -m prints the body, netrc matches the typed host string."
+description: "Use when a script, scheduler, or agent shell needs to make HTTP calls - JSON or form requests, auth, cookies, sessions, redirects, timeouts, or downloads. xh speaks HTTPie syntax from one static Rust binary; measured traps on 0.26.3: a non-TTY stdin silently becomes the request body (pass -I in scripts), every host defaults to http:// not https://, status classes exit 3/4/5, timeout exits 2, redirect exhaustion 6, piped -m prints the body, netrc matches the typed host string."
 ---
 
 # xh — HTTPie-compatible HTTP requests from one static binary
@@ -380,6 +380,8 @@ def xh(*args, env=None, stdin=None, timeout=10):
     if env:
         e.update(env)
     kw = dict(capture_output=True, text=True, timeout=timeout, env=e, input=stdin)
+    if stdin is None:
+        kw["stdin"] = subprocess.DEVNULL
     r = subprocess.run([XH, *args], **kw)
     return r.returncode, r.stdout, r.stderr
 
