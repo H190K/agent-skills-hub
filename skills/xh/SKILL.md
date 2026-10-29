@@ -23,8 +23,8 @@ text here is original.
 
 ## The script-safety rules — read first
 
-- **A non-TTY stdin is a request body, even when empty.** In a script, a cron
-  job, an agent harness, or any pipeline, stdin is usually a pipe, so a bare
+- **A non-TTY stdin is a request body, even when empty.** In a script, a
+  scheduler, an agent harness, or any pipeline, stdin is usually a pipe, so a bare
   `xh :8000/echo` (no -I) reads stdin and sends it as the body: the request
   becomes `POST` with `Content-Type: application/json` and `Content-Length: 0`
   even though you typed nothing. Mixing that "stdin body" with any body
