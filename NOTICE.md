@@ -11,6 +11,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `actionlint` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against actionlint 1.7.12) | MIT |
 | `architecture-diagram` | 1.0.0 | Cocoon-AI/architecture-diagram-generator (Cocoon AI) | MIT |
 | `background-coding-agents` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its coding-agent skill) | MIT |
+| `bat` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against bat 0.26.1, cross-checked on the Ubuntu 24.04 batcat 0.24.0-1build1 build; upstream dual MIT OR Apache-2.0, holder "bat-developers" from LICENSE-MIT, skill text is original) | MIT |
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `coding-development` | 1.15.0 | Hasan Albehadili (h190k) | MIT |
