@@ -39,6 +39,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`node-debugging`](skills/node-debugging/SKILL.md) | Debug Node.js in one-shot probe mode or the interactive REPL — including attaching to an already-running process. | `1.0.0` |
 | [`oracle`](skills/oracle/SKILL.md) | Second-model review, debugging and design checks via the Oracle CLI — prompt + selected files sent to GPT/Gemini/Claude in one shot. | `1.3.1` |
 | [`plan`](skills/plan/SKILL.md) | Write a markdown plan to `.plans/`; no execution. | `2.6.0` |
+| [`procs`](skills/procs/SKILL.md) | Filter, sort and monitor processes with `ps`-like output from one static binary — default search hits Pid (exact) plus User and Command only, AND/OR/NAND/NOR logic, regex modes with never-matching anchors, tree/thread views, JSON that goes invalid under `--only`, TOML configs reshaping columns and search domain, less pager ignoring `$PAGER`, watch that clear-screens into pipes. Measured live on procs 0.14.12. | `1.0.0` |
 | [`project-planning-documentation`](skills/project-planning-documentation/SKILL.md) | Plan and document software projects — proposals, README, architecture, API docs. | `1.2.0` |
 | [`prompt-engineering`](skills/prompt-engineering/SKILL.md) | Write prompts other agents can execute without questions — structure, acceptance tests, safety rules. | `1.0.0` |
 | [`python-debugging`](skills/python-debugging/SKILL.md) | Debug Python with pdb and debugpy — breakpoints, post-mortem, attaching to a live process. | `1.1.0` |
