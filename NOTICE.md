@@ -35,6 +35,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `node-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `oracle` | 1.3.1 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
 | `plan` | 2.6.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `procs` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against procs 0.14.12, cross-checked on the conda-forge procs 0.14.12 build; upstream MIT, holder "dalance" per the Cargo.toml authors field as the LICENSE header carries only "Copyright (c) 2019"; skill text is original) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
 | `prompt-engineering` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `python-debugging` | 1.1.0 | Hasan Albehadili (h190k) | MIT |
