@@ -20,6 +20,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `executing-plans` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `fd` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against fd 10.5.0, cross-checked on 9.0.0, 8.7.1 and the Ubuntu distro fd-find 9.0.0 build; upstream dual MIT OR Apache-2.0) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `fzf` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against fzf 0.74.5, cross-checked on the Ubuntu 24.04 fzf 0.44.1-1ubuntu0.3 build; upstream MIT, holder Junegunn Choi per the LICENSE file; skill text is original) | MIT |
 | `gron` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against gron 0.7.1) | MIT |
 | `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
 | `huggingface-hub` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against huggingface_hub 2.2.0) | MIT |
