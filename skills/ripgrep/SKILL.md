@@ -175,13 +175,18 @@ Context and counting:
 
 ## Machine-readable output
 
-- `--json` emits one JSON object per line: a `begin` object, then a
-  `match` object per match, a final `end` per file, and one closing
-  `summary` (measured sequence for two matches in one file:
+- `--json` emits one JSON object per line: a `begin` object per file, ONE
+  `match` object per LINE containing matches (not per occurrence - a line
+  with 2 occurrences stays one object), a closing `end` per file, and one
+  final `summary` (measured sequence for 3 occurrences across 2 lines:
   `begin, match, match, end, summary`). Each match's `data` carries
   `path`, `line_number`, `lines.text` (the full line), `absolute_offset`,
-  and `submatches`; with `-r/-o -r`, the replacement is embedded via
-  `submatches` (new in 15.0 - 14.x's `--json` ignored `-r`, measured).
+  and `submatches` - the per-occurrence array, each entry recording
+  `match.text`, `start`, `end` (measured: 2 entries on the 2-hit line).
+  `-r/--replace` combines cleanly with `--json` (rc 0, no error, on both
+  15.2.0 and 14.1.0) but the per-occurrence entries still record the RAW
+  matched text - the JSON never substitutes the replacement, so
+  extraction pipelines must not expect replaced values there (measured).
 - `--stats` appends a counter block to human output: `matches`,
   `matched lines`, `files contained matches`, `files searched`,
   `bytes printed`, `bytes searched`, seconds spent; `--json` embeds the
@@ -289,10 +294,11 @@ set -e
 tmp=$(mktemp -d); trap 'rm -rf "$tmp"' EXIT
 printf 'one two\none one\nx\n' > "$tmp/c.txt"
 rg --json 'one' "$tmp/c.txt" \
-  | jq -c 'select(.type=="match") | {path: .data.path.text, line: .data.line_number}' \
+  | jq -c 'select(.type=="match") | {line: .data.line_number, hits: (.data.submatches | length)}' \
   > "$tmp/hits.jsonl"
-test "$(wc -l < "$tmp/hits.jsonl")" = 3
-head -1 "$tmp/hits.jsonl" | rg -q '"line":1'
+test "$(wc -l < "$tmp/hits.jsonl")" = 2
+head -1 "$tmp/hits.jsonl" | rg -q '"hits":1'
+tail -1 "$tmp/hits.jsonl" | rg -q '"hits":2'
 echo "recipe-3-ok"
 ```
 
@@ -304,11 +310,12 @@ echo "recipe-3-ok"
 - 15.2.0, conda-forge build (rev `78115297cd`): all probes identical except
   timing fields inside `--json`/`--stats`.
 - 14.1.0-1 (Ubuntu 24.04 `universe`, `-simd-accel,+pcre2`, PCRE 10.42):
-  differs measured in three places - nested-brace globs are rejected with
-  rc 2, `-vf empty-file` matches nothing (rc 1) instead of everything, and
-  `--json` ignores `-r/--replace`. Everything else probed above behaves
-  identically on both versions, including the `-u` ladder, the
-  requires-repo gitignore rule, `-M` placeholders, and the count flags.
+  differs measured in two places - nested-brace globs are rejected with
+  rc 2 (`nested alternate groups are not allowed`) and `-vf empty-patterns`
+  matches nothing (rc 1) instead of everything. Everything else probed
+  above behaves identically on both versions, including the `-u` ladder,
+  the requires-repo gitignore rule, `-M` placeholders, the count flags,
+  and `-r` alongside `--json`.
 
 ## Also useful here
 
