@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **50 skills**, each self-contained and framework-neutral
+- **51 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -62,6 +62,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`weather`](skills/weather/SKILL.md) | Current weather, forecasts and sunrise/sunset in one no-key curl — formats, JSON field map, resolution gotchas measured live. | `1.0.0` |
 | [`xh`](skills/xh/SKILL.md) | HTTP requests with HTTPie ergonomics from one static binary — the script-safety rules (piped stdin is the body, `-I` required), `http://` default for every host, status classes exit as 3/4/5 with timeout=2 and redirect-exhaustion=6, piped `-m` prints the body, host-string netrc matching, plaintext-credential sessions, curl translation. Measured live on xh 0.26.3. | `1.0.0` |
 | [`xurl`](skills/xurl/SKILL.md) | Drive the official X API CLI — posts, search, timelines, engagement, DMs, encrypted chat, raw v2 endpoints — credential-safe in an agent session. | `1.0.0` |
+| [`zoxide`](skills/zoxide/SKILL.md) | Frecency directory jumps with `z`/`zi` — the z-hook decision flow (literal-cd fast path, self-match refusal, history-gated recording), the exact keyword rule (last keyword inside the final component, ordered non-overlapping matches), score tiers ×4/×2/×0.5/×0.25 and the SUM-of-ranks `_ZO_MAXAGE` prune, 90-day lazy deletion performed by query itself, bincode `db.zo` internals with 0.9.3↔0.10.0 cross-compat, remove's discarded-partial trap, per-source import (z/z.lua/zsh-z/autojump/fasd/atuin), and the fzf-driven `edit` TUI. Measured live on 0.10.0 (official tarball ≡ .deb byte-identical) and noble 0.9.3. | `1.0.0` |
 
 ## Install
 
