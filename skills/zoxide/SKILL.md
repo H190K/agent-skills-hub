@@ -19,8 +19,9 @@ skill.
 
 ## Install and init
 
-1. Get the binary: the official release tarball or `.deb` (both sha256-identical),
-   or `conda install -c conda-forge zoxide`. Distro builds lag (noble: 0.9.3).
+1. Get the binary: the official release tarball or `.deb` (their extracted
+   binaries are byte-identical, sha256 `0959b169…`), or
+   `conda install -c conda-forge zoxide`. Distro builds lag (noble: 0.9.3).
 2. Verify: `zoxide --version` → `zoxide 0.10.0`.
 3. Wire the shell: `eval "$(zoxide init bash)"` at the **end** of `~/.bashrc`.
    Supported shells (from `zoxide init --help`): `bash`, `elvish`, `fish`,
@@ -145,7 +146,7 @@ existence).
 ## Database internals
 
 - Location: `$XDG_DATA_HOME/zoxide/db.zo` (falling back to
-  `$HOME/.local/share/zoxide/db.zo`), or exactly `$ZO_DATA_DIR` when set.
+  `$HOME/.local/share/zoxide/db.zo`), or exactly `$_ZO_DATA_DIR` when set.
   `_ZO_DATA_DIR` replaces the whole directory path and **must be absolute**
   (relative value → rc 1 `zoxide: _ZO_DATA_DIR must be an absolute path`). The
   directory is created on demand; `db.zo` appears on the first *write*.
@@ -219,7 +220,7 @@ variable exists):
 | `zsh-z` | `~/.z` (measured — same default as `z`) | same as `z` |
 | `z.lua` | `~/.zlua` (measured) | same as `z` |
 | `autojump` | `$XDG_DATA_HOME/autojump/autojump.txt` (measured) | `rank\t path`, sigmoid-normalized (source-pinned) |
-| `atuin` | runs `atuin history list --format={time}\t{directory} --print0` | missing atuin → rc 1 `failed to run \`atuin\`; is it installed and on PATH?` |
+| `atuin` | runs `atuin history list --format={time}\t{directory} --print0` | missing atuin → rc 1 with `` failed to run `atuin`; is it installed and on PATH? `` |
 
 - `z`/`fasd`/`zsh-z`/`z.lua` rows are **pipe-delimited path|rank|epoch**
   (split from the right, so paths containing `|` survive); epoch is seconds.
@@ -251,7 +252,7 @@ variable exists):
 
 ## fzf interactivity (needs the `fzf` binary)
 
-- `query -s`-style scoring lines are formatted `score\tpath` with `--read0` so
+- Interactive fzf rows are formatted `score\tpath` with `--read0` so
   NUL-delimited rows feed fzf; `--nth=2` makes the search examine only the path
   column.
 - No-TTY + empty input: rc 1 `zoxide: no match found` (fzf treats the empty
