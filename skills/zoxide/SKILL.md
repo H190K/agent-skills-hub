@@ -1,7 +1,7 @@
 ---
 name: zoxide
 version: 1.0.0
-description: "Directory-frecency jumps: install and init zoxide, the z/zi decision flow, the exact keyword-matching rule (last keyword must occur inside the final path component), score tiers and the SUM-OF-RANKS MAXAGE prune, exclude globs, bincode DB internals with 0.9-to-0.10 cross-compat, scripting zoxide non-interactively (query/add/remove/import), and the fzf-driven edit TUI. Use when a jump misses or ranks oddly, when migrating z/autojump/atuin histories, before scripting zoxide, or when upgrading from 0.9.x."
+description: "Directory-frecency jumps: install and init zoxide, the z/zi decision flow, the exact keyword-matching rule (last keyword must occur inside the final path component), score tiers and the SUM-OF-RANKS MAXAGE prune, exclude globs, bincode DB internals with 0.9-to-0.10 cross-compat, scripting zoxide non-interactively (query/add/remove/import), and the fzf-driven edit TUI. Use when a jump misses or ranks oddly, when migrating z/autojump/atuin histories, or scripting zoxide."
 ---
 
 # zoxide (0.10.0)
