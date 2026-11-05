@@ -16,6 +16,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `coding-development` | 1.15.0 | Hasan Albehadili (h190k) | MIT |
 | `delta` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against delta 0.20.1, byte-identical extracted binary from the official git-delta 0.20.1 amd64 .deb, cross-checked on the Ubuntu 24.04 git-delta 0.16.5-5 build; upstream MIT, holder "Dan Davison" from the source-tarball LICENSE, skill text is original) | MIT |
+| `difftastic` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against difftastic 0.72.0 official release binary, same-version conda-forge 0.72.0 cross-check with byte-identical text and JSON output; upstream MIT, holder "Wilfred Hughes" from the source-tarball LICENSE, skill text is original) | MIT |
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `dust` | 1.0.0 | bootandy/dust (bootandy + nebkor; original — behavior verified live against dust 1.2.6, cross-checked on 1.1.2 and 0.8.6; upstream licence Apache-2.0, skill text is original) | MIT |
 | `executing-plans` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |

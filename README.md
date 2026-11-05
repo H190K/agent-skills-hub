@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **52 skills**, each self-contained and framework-neutral
+- **53 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -20,6 +20,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`code-review-reception`](skills/code-review-reception/SKILL.md) | Evaluate review feedback on technical merit instead of agreeing or complying on reflex. | `1.1.0` |
 | [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.15.0` |
 | [`delta`](skills/delta/SKILL.md) | Syntax-highlighting pager for git and unified diffs — the stdin-only input model with two-file mode, color that persists in pipes, the auto pager that withholds output only past one screen, theme and light/dark detection, side-by-side wrap rules, and config resolution traps (`GIT_CONFIG_GLOBAL` ignored, `--config` replaces the whole resolution). Measured live on delta 0.20.1. | `1.0.0` |
+| [`difftastic`](skills/difftastic/SKILL.md) | Structural diff that compares syntax trees — reroute git through it (`diff.external` / `GIT_EXTERNAL_DIFF`), the exit-code contract (0 by default even with differences, `--check-only --exit-code` as a CI gate), the exact fallback headers that flip to text diff (parse-error / byte / graph limits), the `DFT_UNSTABLE=yes`-gated JSON mode with its chunk/alignment shape, directory / conflict-marker / binary / override handling. Measured live on difftastic 0.72.0. | `1.0.0` |
 | [`dispatching-parallel-agents`](skills/dispatching-parallel-agents/SKILL.md) | Split independent problems across one focused agent per domain, dispatched in a single batch, then integrate and verify. | `1.0.0` |
 | [`dust`](skills/dust/SKILL.md) | Readable disk usage — bar-chart tree sorted biggest-at-bottom, 20-row piped display cap with full-tree totals, filter semantics (-X path prune vs -v/-e regex node paths with the $-anchor asymmetry, display-only -z), size modes (blocks, apparent-size, filecount, filetime), per-extension view, JSON shape with display-rounded sizes; version walls back to 0.8.6 (no -o) and 1.1.2 (bad path rc 0). Measured live on 1.2.6. | `1.0.0` |
 | [`executing-plans`](skills/executing-plans/SKILL.md) | Execute a written plan inline, task by task — per-task briefs, a ledger that survives compaction, one fresh whole-branch review. | `1.1.0` |
