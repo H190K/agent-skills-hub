@@ -25,6 +25,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `fzf` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against fzf 0.74.5, cross-checked on the Ubuntu 24.04 fzf 0.44.1-1ubuntu0.3 build; upstream MIT, holder Junegunn Choi per the LICENSE file; skill text is original) | MIT |
 | `gron` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against gron 0.7.1) | MIT |
 | `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
+| `hexyl` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against hexyl 0.17.0 official release binary, sha256-identical extracted binary from the official 0.17.0 amd64 .deb, same-version conda-forge 0.17.0 cross-check with byte-identical output on all probes, cross-checked on the Ubuntu 24.04 hexyl 0.8.0-2 build for the divergence row; upstream MIT/Apache-2.0 dual, LICENSE-MIT carries no holder line — author David Peter per Cargo.toml, skill text is original) | MIT |
 | `huggingface-hub` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against huggingface_hub 2.2.0) | MIT |
 | `humanizer` | 1.0.0 | blader/humanizer (Siqi Chen) | MIT |
 | `hyperfine` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against hyperfine 2.0.0, cross-checked on 1.19.0 and the Ubuntu 1.18.0 distro build) | MIT |
