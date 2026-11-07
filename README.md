@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **54 skills**, each self-contained and framework-neutral
+- **55 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -27,6 +27,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`fd`](skills/fd/SKILL.md) | Fast file and directory finding — regex or glob with gitignore/hidden/smart-case defaults, depth, size and age filters, per-result and batched exec modes; pins the 9/10 breaking walls (.git under `--hidden`, the path-separator pattern rejection) and the `-q`-only presence check. Measured live on fd 10.5.0. | `1.0.0` |
 | [`finishing-a-development-branch`](skills/finishing-a-development-branch/SKILL.md) | Merge, publish, keep or discard finished work, and clean up the workspace. | `1.0.0` |
 | [`fzf`](skills/fzf/SKILL.md) | Fuzzy-pick items from a list in scripts or terminals — headless `--filter` with the 0/1/2/130 exit taxonomy, smart-case and quoted-term search semantics, the split → with-nth → nth matching pipeline, accept-nth raw-span output quirks, tiebreaks and schemes, pty-measured UI facts (multi input-order output, `--expect` key lines, signals), `FZF_DEFAULT_*` env contract, the built-in walker, and shell integration. Measured live on fzf 0.74.5. | `1.0.0` |
+| [`glow`](skills/glow/SKILL.md) | Render and read markdown in the terminal — files, READMEs, piped stdin, fetched repo readmes, the folder-notes TUI, or scripting against the output. Piped notty trap (OSC-8 on pipes unless -s), dead tokyonight style, inert --config, fixed 80-col wrap, frontmatter stripping, TUI keys — measured live on glow 3.0.0. | `1.0.0` |
 | [`gron`](skills/gron/SKILL.md) | Make JSON greppable — flatten to one statement per leaf, then extract, delete, edit and rebuild with `gron -u`, diff two files path-wise; NDJSON stream, value extraction, full exit codes; measured live on gron 0.7.1. | `1.0.0` |
 | [`grounded-citations`](skills/grounded-citations/SKILL.md) | Cite what you fetched — an id ledger kept at retrieval time, a generated Sources block, and a verify step for the draft. | `1.0.0` |
 | [`hexyl`](skills/hexyl/SKILL.md) | Color-coded hex dumps with a character panel — the pipe trap (output stays colored by default; `NO_COLOR` vs `--color=force` ordering), `=` -syntax for negative `--skip`, `--display-offset` math and its help-text lie, squeeze semantics with the end-of-data row, kB/KiB/0x/block units, panels/terminal-width mapping, exit-code taxonomy, and the Ubuntu 0.8.0 divergence wall. Measured live on hexyl 0.17.0. | `1.0.0` |

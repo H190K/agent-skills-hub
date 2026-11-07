@@ -23,6 +23,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `fd` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against fd 10.5.0, cross-checked on 9.0.0, 8.7.1 and the Ubuntu distro fd-find 9.0.0 build; upstream dual MIT OR Apache-2.0) | MIT |
 | `finishing-a-development-branch` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `fzf` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against fzf 0.74.5, cross-checked on the Ubuntu 24.04 fzf 0.44.1-1ubuntu0.3 build; upstream MIT, holder Junegunn Choi per the LICENSE file; skill text is original) | MIT |
+| `glow` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against the official charmbracelet/glow 3.0.0 release binary (sha256-verified) and v2.1.2 cross-checked; upstream MIT) | MIT |
 | `gron` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against gron 0.7.1) | MIT |
 | `grounded-citations` | 1.0.0 | Hasan Albehadili (h190k; adapted from work by Teknium) | MIT |
 | `hexyl` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against hexyl 0.17.0 official release binary, sha256-identical extracted binary from the official 0.17.0 amd64 .deb, same-version conda-forge 0.17.0 cross-check with byte-identical output on all probes, cross-checked on the Ubuntu 24.04 hexyl 0.8.0-2 build for the divergence row; upstream MIT/Apache-2.0 dual, LICENSE-MIT carries no holder line — author David Peter per Cargo.toml, skill text is original) | MIT |
