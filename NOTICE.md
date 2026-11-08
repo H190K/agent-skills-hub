@@ -59,6 +59,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `typos` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against typos-cli 1.51.1) | MIT |
 | `using-git-worktrees` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `verification-before-completion` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `watchexec` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against the official watchexec 2.8.0 release binary, sha256-verified against the release SHA256SUMS, same-version conda-forge 2.8.0 build with md5-identical --help and completions, cross-checked on conda-forge 2.1.1/2.2.0 for the divergence row; upstream Apache-2.0, holder "Félix Saparelli, Matt Green" per crates/cli/Cargo.toml, skill text is original) | MIT |
 | `weather` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its weather skill) | MIT |
 | `xh` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against xh 0.26.3, cross-checked on the conda-forge xh 0.26.3 build and release binaries back to 0.17.0; upstream MIT, holder "Mohamed Daahir" from the source-tarball LICENSE, skill text is original) | MIT |
 | `xurl` | 1.0.0 | xdevplatform/xurl (Santiago Medina Rolong; adapted from the repo's own agent skill) | MIT |

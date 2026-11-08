@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **55 skills**, each self-contained and framework-neutral
+- **56 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -63,6 +63,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`typos`](skills/typos/SKILL.md) | Source-code spell checker — scan identifiers, strings, comments and filenames, auto-fix or diff, per-word and pattern-based ignores, exit codes 0/2/64/78; measured live on typos-cli 1.51.1. | `1.0.0` |
 | [`using-git-worktrees`](skills/using-git-worktrees/SKILL.md) | Isolate feature work in its own workspace and verify a clean baseline first. | `1.0.0` |
 | [`verification-before-completion`](skills/verification-before-completion/SKILL.md) | Check what counts as evidence before reporting work as done. | `1.1.0` |
+| [`watchexec`](skills/watchexec/SKILL.md) | Rerun commands on file changes — the default-shell join trap that silently rewrites `sh -c`, the self-trigger loop from commands writing into the watch tree, do-nothing/queue/restart/signal busy modes, ignore discovery that works without git, the measured JSON event schema, `--clear` escape bytes on pipes and the signal/exit taxonomy. Measured live on watchexec 2.8.0. | `1.0.0` |
 | [`weather`](skills/weather/SKILL.md) | Current weather, forecasts and sunrise/sunset in one no-key curl — formats, JSON field map, resolution gotchas measured live. | `1.0.0` |
 | [`xh`](skills/xh/SKILL.md) | HTTP requests with HTTPie ergonomics from one static binary — the script-safety rules (piped stdin is the body, `-I` required), `http://` default for every host, status classes exit as 3/4/5 with timeout=2 and redirect-exhaustion=6, piped `-m` prints the body, host-string netrc matching, plaintext-credential sessions, curl translation. Measured live on xh 0.26.3. | `1.0.0` |
 | [`xurl`](skills/xurl/SKILL.md) | Drive the official X API CLI — posts, search, timelines, engagement, DMs, encrypted chat, raw v2 endpoints — credential-safe in an agent session. | `1.0.0` |
