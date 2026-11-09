@@ -39,6 +39,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `nano-pdf` | 1.0.0 | Hasan Albehadili (h190k; rewritten from his local library draft — CLI behavior verified live against nano-pdf 0.2.1) | MIT |
 | `node-debugging` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `oracle` | 1.3.1 | steipete/oracle (Peter Steinberger; adapted from the repo's own agent skill) | MIT |
+| `pastel` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against the official pastel 0.12.0 release binary sha256-verified against the release asset digest, md5-identical binary from the release tarball, cross-checked on the official 0.9.0 (2022) tarball for the divergence row; upstream MIT/Apache-2.0 dual per LICENSE-MIT + LICENSE-APACHE and Cargo.toml, author David Peter, skill text is original) | MIT |
 | `plan` | 2.6.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `procs` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against procs 0.14.12, cross-checked on the conda-forge procs 0.14.12 build; upstream MIT, holder "dalance" per the Cargo.toml authors field as the LICENSE header carries only "Copyright (c) 2019"; skill text is original) | MIT |
 | `project-planning-documentation` | 1.2.0 | Hasan Albehadili (h190k) | MIT |
