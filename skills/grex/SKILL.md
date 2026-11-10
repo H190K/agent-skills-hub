@@ -1,7 +1,7 @@
 ---
 name: grex
 version: 1.0.0
-description: "Use when test cases — log samples, filenames, field formats — must be turned into a regex by example: grex. Covers the flag-placement trap (flags after the first test case silently become test cases at rc 0), the always-added anchors, opt-in repetition detection with its min-repetitions/min-substring-length knobs, the (?i)/(?x)/\u{...} portability matrix across Python and JavaScript, `-f -` reading the filename from stdin, the rc-101 panic on empty input, and the pre-1.4.2 rc-0-on-error divergence. Measured on the official 1.4.6 binary."
+description: "Use when test cases — log samples, filenames, field formats — must become a regex by example: grex. Covers the flag-placement trap (flags after the first test case silently become test cases at rc 0), always-on anchors, opt-in repetition detection with its min-repetitions/min-substring-length knobs, the (?i)/(?x)/\u{...} portability matrix across Python/JavaScript, `-f -` reading the filename from stdin, the rc-101 panic on empty input, and the pre-1.4.2 rc-0-on-error divergence."
 ---
 
 # grex — generate regular expressions from test cases, with the traps measured
@@ -209,9 +209,7 @@ grep -n "$id" events.log
 
 ```bash
 set -e
-bin=${GREX_BIN:-grex}
-command -v "$bin" >/dev/null 2>&1 || bin=$(command -v grex)
-[ -n "$bin" ] || { echo 'FAIL: grex not installed'; exit 1; }
+bin=$(command -v "${GREX_BIN:-grex}") || { echo 'FAIL: grex not installed'; exit 1; }
 "$bin" --version </dev/null | grep -F 'grex' >/dev/null
 d=$(mktemp -d); trap 'rm -rf "$d"' EXIT
 out=$("$bin" a b c); [ "$out" = '^[a-c]$' ] || { echo "FAIL: basic, got $out"; exit 1; }
