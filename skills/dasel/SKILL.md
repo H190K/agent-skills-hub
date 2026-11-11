@@ -1,7 +1,7 @@
 ---
 name: dasel
 version: 1.0.0
-description: "Use when a JSON, YAML, TOML, XML, CSV, INI, HCL, or KDL file must be queried, converted, or modified with one selector language: dasel. Covers the v3 stdin-only file model (no -f flag), dot-prefix selectors as hard parse errors, end-inclusive slices, JSON-quoted output and the yaml-writer unquote trick, camelCase-only functions absent from help, removed put and delete commands vs assignment expressions with --root, rc 1-vs-80 taxonomy, and the auto-loaded ~/dasel.yaml config. Measured on official 3.11.2; apt/noble ships divergent 2.6.0."
+description: "Use when JSON, YAML, TOML, XML, CSV, INI, HCL, or KDL must be queried, converted, or modified with one selector language: dasel. Covers the v3 stdin-only file model (no -f), dot-prefix selectors as parse errors, end-inclusive slices, the yaml-writer unquote trick, camelCase-only functions absent from help, removed put/delete vs assignment expressions with --root, rc 1-vs-80 taxonomy, and the auto-loaded ~/dasel.yaml config. Measured on 3.11.2; apt/noble ships divergent 2.6.0."
 ---
 
 # dasel — one selector language over eight config formats, with the v2-to-v3 traps measured
