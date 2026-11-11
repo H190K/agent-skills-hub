@@ -208,11 +208,11 @@ tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 printf '{"users":[{"name":"alpha"},{"name":"beta"}]}' > "$tmp/t.json"
 
-# stdin + selector, no -f
+# stdin + selector, no -f; the json writer quotes strings
 [ "$("$bin" -i json 'users[0].name' < "$tmp/t.json")" = '"alpha"' ] || { echo "FAIL: sel"; exit 1; }
 
 # dots are separators, not prefixes
-echo '{}' | "$bin" -i json '.name' > "$tmp/err" 2>&1 || true
+if echo '{}' | "$bin" -i json '.name' > "$tmp/err" 2>&1; then echo "FAIL: dot-prefix should error"; exit 1; fi
 grep -q 'unexpected token' "$tmp/err" || { echo "FAIL: dot prefix"; exit 1; }
 
 # yaml writer unquotes scalars; json quotes them
@@ -221,15 +221,17 @@ grep -q 'unexpected token' "$tmp/err" || { echo "FAIL: dot prefix"; exit 1; }
 # slices are end-inclusive
 [ "$("$bin" -i json --compact 'u[0:1]' <<< '{"u":[1,2,3]}')" = "[1,2]" ] || { echo "FAIL: slice"; exit 1; }
 
-# assignment with --root; delete() does not exist
+# assignment with --root; no delete function exists
 out=$("$bin" -i json --compact --root 'users[1].name = "B"' < "$tmp/t.json")
 [ "$out" = '{"users":[{"name":"alpha"},{"name":"B"}]}' ] || { echo "FAIL: assign"; exit 1; }
-echo '{}' | "$bin" -i json 'delete(foo)' > "$tmp/err2" 2>&1 || true
+if echo '{}' | "$bin" -i json 'delete(foo)' > "$tmp/err2" 2>&1; then echo "FAIL: delete should error"; exit 1; fi
 grep -q 'unknown function' "$tmp/err2" || { echo "FAIL: delete"; exit 1; }
 
-# rc taxonomy: runtime rc 1, usage rc 80
-echo '{}' | "$bin" -i json 'foo[' > /dev/null 2>&1; [ $? -eq 1 ] || { echo "FAIL: rc1"; exit 1; }
-"$bin" -z < /dev/null > /dev/null 2>&1; [ $? -eq 80 ] || { echo "FAIL: rc80"; exit 1; }
+# rc taxonomy: runtime errors exit 1, Kong usage errors exit 80
+rc=0; { echo '{}' | "$bin" -i json 'foo[' > /dev/null 2>&1; } || rc=$?
+[ "$rc" -eq 1 ] || { echo "FAIL: rc1"; exit 1; }
+rc=0; { "$bin" -z < /dev/null > /dev/null 2>&1; } || rc=$?
+[ "$rc" -eq 80 ] || { echo "FAIL: rc80"; exit 1; }
 
 # format conversion across the matrix
 [ "$("$bin" -i json -o toml <<< '{"a":1,"s":"t"}' | tr -d '\n')" = "a = 1s = 't'" ] || { echo "FAIL: toml"; exit 1; }

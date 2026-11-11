@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **58 skills**, each self-contained and framework-neutral
+- **59 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -19,6 +19,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`blogwatcher`](skills/blogwatcher/SKILL.md) | Monitor blogs and RSS/Atom feeds via the `blogwatcher-cli` tool. | `2.2.0` |
 | [`code-review-reception`](skills/code-review-reception/SKILL.md) | Evaluate review feedback on technical merit instead of agreeing or complying on reflex. | `1.1.0` |
 | [`coding-development`](skills/coding-development/SKILL.md) | Build, debug, review and improve software across common languages and APIs. | `1.15.0` |
+| [`dasel`](skills/dasel/SKILL.md) | Query, convert, and modify JSON/YAML/TOML/XML/CSV/INI/HCL/KDL with one selector language — the stdin-only v3 file model (no `-f` flag), dot-prefix parse errors, end-inclusive slices, the yaml-writer unquote trick, camelCase-only functions that help never lists, removed put/delete vs assignment expressions with `--root`, rc 1-vs-80 taxonomy, and the auto-loaded `~/dasel.yaml` config. Measured live on dasel 3.11.2. | `1.0.0` |
 | [`delta`](skills/delta/SKILL.md) | Syntax-highlighting pager for git and unified diffs — the stdin-only input model with two-file mode, color that persists in pipes, the auto pager that withholds output only past one screen, theme and light/dark detection, side-by-side wrap rules, and config resolution traps (`GIT_CONFIG_GLOBAL` ignored, `--config` replaces the whole resolution). Measured live on delta 0.20.1. | `1.0.0` |
 | [`difftastic`](skills/difftastic/SKILL.md) | Structural diff that compares syntax trees — reroute git through it (`diff.external` / `GIT_EXTERNAL_DIFF`), the exit-code contract (0 by default even with differences, `--check-only --exit-code` as a CI gate), the exact fallback headers that flip to text diff (parse-error / byte / graph limits), the `DFT_UNSTABLE=yes`-gated JSON mode with its chunk/alignment shape, directory / conflict-marker / binary / override handling. Measured live on difftastic 0.72.0. | `1.0.0` |
 | [`dispatching-parallel-agents`](skills/dispatching-parallel-agents/SKILL.md) | Split independent problems across one focused agent per domain, dispatched in a single batch, then integrate and verify. | `1.0.0` |
