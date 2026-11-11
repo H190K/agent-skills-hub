@@ -15,6 +15,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `blogwatcher` | 2.2.0 | JulienTant (fork of Hyaxia/blogwatcher) | MIT |
 | `code-review-reception` | 1.1.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `coding-development` | 1.15.0 | Hasan Albehadili (h190k) | MIT |
+| `dasel` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against the official TomWright/dasel v3.11.2 release binary, sha256 verified against the GitHub per-asset digest, conda-forge 3.11.2 cross-checked with an md5-identical --help, v2.6.0 divergence row measured on Ubuntu noble's apt build; upstream MIT, holder "Tom Wright" from the source-tarball LICENSE, skill text is original) | MIT |
 | `delta` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against delta 0.20.1, byte-identical extracted binary from the official git-delta 0.20.1 amd64 .deb, cross-checked on the Ubuntu 24.04 git-delta 0.16.5-5 build; upstream MIT, holder "Dan Davison" from the source-tarball LICENSE, skill text is original) | MIT |
 | `difftastic` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against difftastic 0.72.0 official release binary, same-version conda-forge 0.72.0 cross-check with byte-identical text and JSON output; upstream MIT, holder "Wilfred Hughes" from the source-tarball LICENSE, skill text is original) | MIT |
 | `dispatching-parallel-agents` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
