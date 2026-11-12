@@ -1,7 +1,7 @@
 ---
 name: duf
 version: 1.0.0
-description: "Use when df output is unreadable or unscriptable — capacity checks in scripts, mount triage, or audit JSON: use duf. Covers grouped local/special/network tables, exact-path args, selection errors that land on stdout (first-missing-prefix lstat, unknown device group) while flag-value errors go to stderr, filter values that stay silent when they match nothing, ascending-only sort with no reverse flag in 0.9.1, JSON that ignores every filter and renames keys, the two-value threshold grammar that rejects the word never, and the 0.9.1-vs-0.8.1 terminal-shrink divergence. Measured on the official 0.9.1 release binary."
+description: "Use when df output is unreadable or unscriptable — capacity checks in scripts, mount triage, or audit JSON: use duf. Covers grouped tables, exact-path args whose selection errors land on stdout while flag errors go to stderr, filters silent when they match nothing, ascending-only sort with no reverse flag in 0.9.1, filter-immune JSON with renamed keys, the two-value threshold grammar that rejects the word never, and the 0.9.1-vs-0.8.1 terminal-shrink divergence. Measured on official 0.9.1."
 ---
 
 # duf — the df replacement measured: exact-path args, stdout-vs-stderr error split, filter-immune JSON, ascending sorts
