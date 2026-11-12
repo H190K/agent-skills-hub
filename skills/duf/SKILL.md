@@ -1,10 +1,10 @@
 ---
 name: duf
 version: 1.0.0
-description: "Use when df output is unreadable or unscriptable — capacity checks in scripts, mount triage, or audit JSON: use duf. Covers grouped local/special/network tables, exact-path args that differ from df, mount/fs/wildcard filters with silent rc-1 traps, ascending-only sort (no reverse flag in 0.9.1), filter-immune JSON with renamed keys, the two-value threshold grammar that rejects the word never, and the 0.9.1-vs-0.8.1 terminal-shrink divergence. Measured on the official 0.9.1 release binary."
+description: "Use when df output is unreadable or unscriptable — capacity checks in scripts, mount triage, or audit JSON: use duf. Covers grouped local/special/network tables, exact-path args, selection errors that land on stdout (first-missing-prefix lstat, unknown device group) while flag-value errors go to stderr, filter values that stay silent when they match nothing, ascending-only sort with no reverse flag in 0.9.1, JSON that ignores every filter and renames keys, the two-value threshold grammar that rejects the word never, and the 0.9.1-vs-0.8.1 terminal-shrink divergence. Measured on the official 0.9.1 release binary."
 ---
 
-# duf — the df replacement measured: exact-path args, silent rc-1 filters, filter-immune JSON, ascending sorts
+# duf — the df replacement measured: exact-path args, stdout-vs-stderr error split, filter-immune JSON, ascending sorts
 
 `duf` (muesli/duf, MIT) renders disk usage as grouped box-drawn tables and JSON. This skill is
 written from measurements on the official **v0.9.1** release binary (sha256-verified, see Install),
@@ -63,8 +63,10 @@ This is where expectations from other tools break:
 - **mixing a valid and a nonexistent arg kills the whole run**: `duf /tmp /nope` prints only the
   `lstat /nope` line, no table, rc 1.
 
-So the scripted rule: rc 1 with a `lstat` line on stdout = bad path argument; rc 1 with zero
-output anywhere = invalid filter value (below); rc 1 with a named error on stderr = bad flag value.
+So the scripted rule: rc 1 with a line on **stdout** = argument selection failed (a `lstat` path
+error or an `unknown device group` filter typo); rc 1 with a line on **stderr** = a flag *value* is
+wrong (sort/output column, theme, threshold grammar); rc 0 with zero output = a filter matched
+nothing (valid for groups, unvalidated for fs/wildcards).
 
 ## Filtering — and the silent-failure traps
 
@@ -77,12 +79,15 @@ Three filter families, all comma-separated lists:
 
 The traps, both measured:
 
-- an **invalid group name** (`duf -hide bogus`) is a **silent rc 1**: nothing on stdout, nothing on
-  stderr, no table, no error. A typo in the group vocabulary looks exactly like "the run crashed".
+- an **invalid group name** (`duf -hide bogus`, or `-only` likewise) errors on **stdout** —
+  `unknown device group: bogus` — and exits **rc 1 with empty stderr**. The message is easy to
+  lose to `2>/dev/null` and the exit code is what a wrapper sees.
+- **fs and mount-point filter values are NOT vocabulary-checked**: `-only-fs bogusfs` and
+  `-only-mp '['` return **rc 0, zero output, no error** — they just match nothing. A typo'd fs
+  name or wildcard looks like "no such filesystem anywhere", not like an error.
 - a **valid filter that matches nothing** (`duf -only network` on a laptop with no network mounts)
-  is **rc 0 with zero output** — silently empty, so `duf ... && do_something` happily runs on an
-  empty table. Combine with the previous point: only the *invalid* value fails, a *valid* value
-  with no matches "succeeds" empty.
+  is likewise **rc 0 with zero output** — so `duf ... && do_something` happily runs on an empty
+  table. Distinguish the two by knowing your filter values, not by the exit code.
 
 Also worth knowing: an explicit `-only-mp` pattern that matches a pseudo mount prints that special
 filesystem **even though the default table hides its group** — explicit mount filters surface
@@ -98,9 +103,12 @@ inodes_used, inodes_avail, inodes_usage, type, filesystem`.
   `--reverse` on master after the release (issue #360), so text claiming it exists is ahead of
   the binary. For biggest-first, consume `-json` and sort on `free` yourself
   (the table has no descending mode).
-- `-output` both selects and **reorders**: `duf -output usage,avail,used,size,mountpoint` prints
-  USE% first. Inode columns work without `-inodes`
-  (`duf -output mountpoint,inodes,inodes_usage`).
+- `-output` **selects columns but never reorders them** — whatever order you list, the frame
+  renders in the canonical sequence (mountpoint, size, used, avail, usage, inodes, inodes_used,
+  inodes_avail, inodes_usage, type, filesystem), and the leftover width flows into the remaining
+  columns (drop five columns and the USE% bar becomes huge). Inode columns work without
+  `-inodes` (`duf -output mountpoint,inodes,inodes_usage`). Listing a column twice or in a
+  different order changes nothing but width.
 - bad keys are a proper error: `-sort bogus` → rc 1, stderr
   `unknown column: bogus (valid: mountpoint, size, used, avail, usage, inodes, inodes_used,
   inodes_avail, inodes_usage, type, filesystem)`. Sort keys use the short form `inodes_avail` —
@@ -190,10 +198,13 @@ Never golden-compare these numbers across runs — live filesystems move between
 
 ## rc taxonomy
 
-- `0` — success, **including a filter that matched nothing** (silent empty output)
-- `1` — runtime and value errors: unknown sort/output column (stderr, lists valid keys), unknown
-  theme (stderr), threshold grammar violations (stderr), **invalid group name (silent, nothing
-  anywhere)**, nonexistent path argument (`lstat ...` line on **stdout**, stderr empty)
+- `0` — success, **including a filter that matched nothing** (silent empty output; fs and
+  wildcard filter values are never validated)
+- `1` — runtime and value errors, split by channel:
+  - error printed on **stdout** (stderr empty): nonexistent path argument (`lstat ...` line),
+    **unknown filter group** (`unknown device group: bogus` from `-only`/`-hide`)
+  - error printed on **stderr** (stdout empty): unknown sort/output column (lists valid keys),
+    unknown theme, threshold grammar violations
 - `2` — unknown flag (`flag provided but not defined: -bogus` plus the usage dump, on stderr)
 - `duf -h` prints the help and exits 0. No measured code path exits with anything else.
 
@@ -214,9 +225,9 @@ bad() { fail=$((fail+1)); echo "FAIL: $1"; }
 
 # 1 default run: rc 0, table present
 if "$DUF" </dev/null 2>/dev/null | grep -q 'device'; then ok; else bad "plain run rc/table"; fi
-# 2 -output rebuilds column order (usage first)
-if "$DUF" -output usage,size,mountpoint </dev/null 2>/dev/null | sed -n '4p' | grep -q 'USE%.*SIZE'; then
-  ok; else bad "-output reorder"; fi
+# 2 -output selects columns but never reorders: canonical order always
+if "$DUF" -output size,mountpoint </dev/null 2>/dev/null | sed -n '4p' | grep -q 'MOUNTED ON.*SIZE'; then
+  ok; else bad "-output canonical order"; fi
 # 3 -sort size is ascending (first row's size <= last row's size)
 if python3 - "$("$DUF" -sort size -output size,mountpoint </dev/null 2>/dev/null)" <<'PY'
 import sys, re
@@ -230,10 +241,10 @@ def val(line):
 sys.exit(0 if rows and val(rows[0]) <= val(rows[-1]) else 1)
 PY
 then ok; else bad "ascending -sort size"; fi
-# 4 unknown sort key: rc 1, valid-key list on stderr
-if [ "$("$DUF" -sort bogus </dev/null 2>&1 >/dev/null; echo $?)" = "1" ] && \
-   "$DUF" -sort bogus </dev/null 2>&1 >/dev/null | grep -q 'unknown column'; then
-  ok; else bad "bad sort key"; fi
+# 4 unknown sort key: rc 1, valid-key list on stderr (stdout stays empty)
+o=$("$DUF" -sort bogus </dev/null 2>/tmp/duf_e >/tmp/duf_o); rc=$?
+if [ "$rc" = "1" ] && grep -q 'unknown column' /tmp/duf_e && [ ! -s /tmp/duf_o ]; then
+  ok; else bad "bad sort key rc=$rc out=$(wc -c </tmp/duf_o) err=$(wc -c </tmp/duf_e)"; fi
 # 5 unknown flag: rc 2, usage dump on stderr
 out=$("$DUF" -zz-not-a-flag </dev/null 2>&1 >/dev/null); rc=$?
 if [ "$rc" = "2" ] && echo "$out" | grep -q 'flag provided but not defined'; then
@@ -242,10 +253,10 @@ if [ "$rc" = "2" ] && echo "$out" | grep -q 'flag provided but not defined'; the
 o=$("$DUF" -theme bogus </dev/null 2>/tmp/duf_e >/tmp/duf_o); rc=$?
 if [ "$rc" = "1" ] && grep -q 'unknown theme' /tmp/duf_e && [ ! -s /tmp/duf_o ]; then
   ok; else bad "bad theme rc=$rc"; fi
-# 7 invalid group name: the SILENT rc 1 — nothing anywhere
+# 7 invalid group name: the error lands on STDOUT (stderr empty), rc 1
 o=$("$DUF" -hide bogus </dev/null 2>/tmp/duf_e >/tmp/duf_o); rc=$?
-if [ "$rc" = "1" ] && [ ! -s /tmp/duf_o ] && [ ! -s /tmp/duf_e ]; then
-  ok; else bad "invalid group silent rc1 (rc=$rc out=$(wc -c </tmp/duf_o) err=$(wc -c </tmp/duf_e))"; fi
+if [ "$rc" = "1" ] && grep -q 'unknown device group' /tmp/duf_o && [ ! -s /tmp/duf_e ]; then
+  ok; else bad "invalid group rc=$rc out=$(head -c 60 /tmp/duf_o) err=$(wc -c </tmp/duf_e)"; fi
 # 8 valid group, zero matches here: rc 0 (content may be empty on other machines)
 if "$DUF" -only network </dev/null >/dev/null 2>/tmp/duf_e; then
   [ ! -s /tmp/duf_e ] && ok || bad "-only network stderr"
