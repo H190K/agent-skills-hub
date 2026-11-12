@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **59 skills**, each self-contained and framework-neutral
+- **60 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -23,6 +23,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`delta`](skills/delta/SKILL.md) | Syntax-highlighting pager for git and unified diffs — the stdin-only input model with two-file mode, color that persists in pipes, the auto pager that withholds output only past one screen, theme and light/dark detection, side-by-side wrap rules, and config resolution traps (`GIT_CONFIG_GLOBAL` ignored, `--config` replaces the whole resolution). Measured live on delta 0.20.1. | `1.0.0` |
 | [`difftastic`](skills/difftastic/SKILL.md) | Structural diff that compares syntax trees — reroute git through it (`diff.external` / `GIT_EXTERNAL_DIFF`), the exit-code contract (0 by default even with differences, `--check-only --exit-code` as a CI gate), the exact fallback headers that flip to text diff (parse-error / byte / graph limits), the `DFT_UNSTABLE=yes`-gated JSON mode with its chunk/alignment shape, directory / conflict-marker / binary / override handling. Measured live on difftastic 0.72.0. | `1.0.0` |
 | [`dispatching-parallel-agents`](skills/dispatching-parallel-agents/SKILL.md) | Split independent problems across one focused agent per domain, dispatched in a single batch, then integrate and verify. | `1.0.0` |
+| [`duf`](skills/duf/SKILL.md) | Readable grouped disk-usage tables and JSON from the df niche — exact-path args (no regex/glob; first-missing-prefix `lstat` errors land on stdout), silent rc-1 filter traps, ascending-only sort (no reverse flag in 0.9.1), filter-immune JSON with renamed keys, the two-value threshold grammar that rejects the word never, piped color-wrapper bytes, and the 0.9.1 auto-shrink vs 0.8.1 edge-clip divergence. Measured live on duf 0.9.1. | `1.0.0` |
 | [`dust`](skills/dust/SKILL.md) | Readable disk usage — bar-chart tree sorted biggest-at-bottom, 20-row piped display cap with full-tree totals, filter semantics (-X path prune vs -v/-e regex node paths with the $-anchor asymmetry, display-only -z), size modes (blocks, apparent-size, filecount, filetime), per-extension view, JSON shape with display-rounded sizes; version walls back to 0.8.6 (no -o) and 1.1.2 (bad path rc 0). Measured live on 1.2.6. | `1.0.0` |
 | [`executing-plans`](skills/executing-plans/SKILL.md) | Execute a written plan inline, task by task — per-task briefs, a ledger that survives compaction, one fresh whole-branch review. | `1.1.0` |
 | [`fd`](skills/fd/SKILL.md) | Fast file and directory finding — regex or glob with gitignore/hidden/smart-case defaults, depth, size and age filters, per-result and batched exec modes; pins the 9/10 breaking walls (.git under `--hidden`, the path-separator pattern rejection) and the `-q`-only presence check. Measured live on fd 10.5.0. | `1.0.0` |
