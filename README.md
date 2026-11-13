@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **60 skills**, each self-contained and framework-neutral
+- **61 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -13,6 +13,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | Skill | What it does | Version |
 | --- | --- | --- |
 | [`actionlint`](skills/actionlint/SKILL.md) | Lint GitHub Actions workflows statically — expression/matrix typo checks, runner labels, `with:` validation, shellcheck/pyflakes integration, exit codes; measured live on actionlint 1.7.12. | `1.0.0` |
+| [`age`](skills/age/SKILL.md) | Encrypt files with `age` from measured behavior — keygen and the `-pq` ML-KEM hybrid, the recipient/identity zoo (X25519, SSH, `-R` files, stdin identities), armor auto-detect, passphrase mode's hard TTY-only gate with one-decrypt-attempt wrong-pass answers, the hidden `-j batchpass` env-var path, `age-inspect` with its JSON shape, the 1.3.x decrypt-side caps (1024 stanzas, 2 MiB header) absent on 1.1.x, and the rc/stream error taxonomy. Measured live on the v1.3.2 release binary. | `1.0.0` |
 | [`architecture-diagram`](skills/architecture-diagram/SKILL.md) | Dark-themed system/cloud architecture diagrams as one self-contained HTML+SVG file with PNG/PDF export. | `1.0.0` |
 | [`background-coding-agents`](skills/background-coding-agents/SKILL.md) | Run the coding-agent CLIs (Anthropic's `claude`, OpenAI's `codex`, `opencode`) as unattended one-shot workers — isolated worktrees, per-agent auth homes, prompt files, provenance receipts. | `1.0.0` |
 | [`bat`](skills/bat/SKILL.md) | View and review files with syntax highlighting from one static binary — byte-exact `cat` when piped (with the `-n` carve-out vs `--style=numbers`), forced colorization, the line-range grammar incl. negative and context ranges, `--diff` gutters and its silent-empty traps, per-glob syntax mapping, config files and the version-coupled cache. Measured live on bat 0.26.1. | `1.0.0` |
