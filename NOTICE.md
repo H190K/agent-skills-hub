@@ -9,6 +9,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | Skill | Version | Original author / source | License |
 | --- | --- | --- | --- |
 | `actionlint` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against actionlint 1.7.12) | MIT |
+| `age` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against the official age v1.3.2 release archive (linux-amd64), release verification via its shipped Sigsum-v2 per-asset proof files plus a pinned sha256, conda-forge 1.3.2 cross-checked with identical -h output, divergence rows measured on Ubuntu noble's apt 1.1.1 build; upstream BSD-3-Clause, holder "The age Authors" from the release LICENSE, skill text is original) | MIT |
 | `architecture-diagram` | 1.0.0 | Cocoon-AI/architecture-diagram-generator (Cocoon AI) | MIT |
 | `background-coding-agents` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its coding-agent skill) | MIT |
 | `bat` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against bat 0.26.1, cross-checked on the Ubuntu 24.04 batcat 0.24.0-1build1 build; upstream dual MIT OR Apache-2.0, holder "bat-developers" from LICENSE-MIT, skill text is original) | MIT |
