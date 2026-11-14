@@ -68,6 +68,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `weather` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its weather skill) | MIT |
 | `xh` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against xh 0.26.3, cross-checked on the conda-forge xh 0.26.3 build and release binaries back to 0.17.0; upstream MIT, holder "Mohamed Daahir" from the source-tarball LICENSE, skill text is original) | MIT |
 | `xurl` | 1.0.0 | xdevplatform/xurl (Santiago Medina Rolong; adapted from the repo's own agent skill) | MIT |
+| `yq` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against the official yq v4.54.3 release binary (linux_amd64, sha256 verified against the GitHub per-asset digest and the release `checksums` sidecar), conda-forge go-yq 4.54.3 cross-checked with md5-identical --version/--help output, and the Ubuntu noble apt 3.1.0-3 python-yq name-collision row measured from the .deb itself; upstream MIT, holder "Mike Farah" from the repo LICENSE, skill text is original) | MIT |
 | `zoxide` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against zoxide 0.10.0, re-run byte-identically on the official .deb and conda-forge 0.10.0 builds, cross-checked on Ubuntu noble's 0.9.3 for the divergence row; upstream MIT, holder "Ajeet D'Souza" from the source-tarball LICENSE, skill text is original) | MIT |
 
 All skills here are markdown only — no code is redistributed. If you are an author listed above and
