@@ -1,6 +1,6 @@
 ---
 name: dust
-version: 1.0.0
+version: 1.1.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
@@ -13,13 +13,13 @@ description: "Use when a per-directory disk usage view is needed — hunting spa
 walks a directory tree and prints every entry as a bar-and-percent row over a tree glyph,
 sorted by size — `du` with the aggregation and sort already done for you.
 
-Everything below was measured live on **dust 1.2.6** (the x86_64 musl release binary) and
-cross-checked on **1.1.2** and **0.8.6**; version lines call out where the surface changes.
+Everything below was measured live on **dust 1.2.7** (the x86_64 musl release binary) and
+cross-checked on **1.2.6**, **1.1.2** and **0.8.6**; version lines call out where the surface changes.
 
 ## Install
 
 - Static build, no root needed: take the release tarball for your platform from GitHub releases
-  (x86_64 Linux musl ships as `dust-v1.2.6-x86_64-unknown-linux-musl.tar.gz`), extract the `dust`
+  (x86_64 Linux musl ships as `dust-v1.2.7-x86_64-unknown-linux-musl.tar.gz`), extract the `dust`
   binary, put it on PATH. The tarball carries only the binary, a LICENSE and a README.
 - Debian-style root install: each release also ships a `.deb` named `du-dust_<version>-1_amd64.deb`.
 - With a Rust toolchain: `cargo install du-dust` (crate name `du-dust`, binary `dust`).
@@ -100,8 +100,21 @@ Multiple input paths render as several trees under a single `(total)` row. `--fi
 (newline-separated) and `--files0-from -` (NUL-separated) read input paths from stdin; empty
 stdin falls back to scanning the current directory.
 
+## Config file
+
+Locations: `$XDG_CONFIG_HOME/dust/config.toml` (falling back to `~/.config/dust/config.toml`) or
+`~/.dust.toml`; keys use the long flag name in kebab-case. Measured end-to-end on 1.2.7:
+`ignore-directory = ["deep/d3"]` prunes that subtree from rows and totals, and
+`invert-filter = ["d2$"]` drops matching rows — 1.2.6 behaved the same in the same probe, so do
+not count these as 1.2.7-only. A missing `--config <file>` only warns and continues at rc 0.
+
 ## Errors, exit codes
 
+- Broken pipe: piping dust into `head` panicked on 1.2.6 (`failed printing to stdout: Broken
+  pipe`); **1.2.7 exits quietly with no error output**.
+- Partial min-size matches like `-z 1.5M` were silently accepted on 1.2.6; **1.2.7 rejects the
+  value with a stderr hint** (`Ignoring invalid min-size: 1.5M`) and still exits rc 0 — the
+  filter is not applied.
 - Unknown flag, invalid `-o` value, conflicting flags → **rc 2** with a clap error.
 - Nonexistent input path → **rc 1** on 1.2.6, stderr `No such file or directory: <paths>`
   (all missing paths are listed together). On **1.1.2 the same error still exited rc 0** — do
