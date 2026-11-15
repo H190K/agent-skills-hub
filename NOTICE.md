@@ -58,6 +58,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `spike` | 1.0.0 | gsd-build/get-shit-done (Lex Christopherson) | MIT |
 | `sqlite-recovery` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `systematic-debugging` | 1.3.0 | obra/superpowers (Jesse Vincent) | MIT |
+| `tealdeer` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against the official tealdeer v1.9.1 release binary (linux-x86_64-musl, sha256 verified against the release .sha256 sidecar), conda-forge 1.9.1 cross-checked with an md5-identical --help, and the Ubuntu noble apt 1.6.1 divergence rows measured from the .deb itself: six missing flags plus a --update that fails against the current upstream per-language ZIP layout; upstream dual MIT OR Apache-2.0, holder "Danilo Bargen and contributors" from LICENSE-MIT, skill text is original) | MIT |
 | `test-driven-development` | 1.0.0 | obra/superpowers (Jesse Vincent) | MIT |
 | `tokei` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against tokei 15.0.0, cross-checked on 14.0.0 and 13.0.0 conda-forge builds; upstream dual MIT OR Apache-2.0, holder "Erin Power" from LICENCE-MIT) | MIT |
 | `trace-mcp` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against trace-mcp 3.38.0) | MIT |

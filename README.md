@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **62 skills**, each self-contained and framework-neutral
+- **63 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -62,6 +62,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`spike`](skills/spike/SKILL.md) | Throwaway experiments that answer a feasibility question with a verdict before any real build. | `1.0.0` |
 | [`sqlite-recovery`](skills/sqlite-recovery/SKILL.md) | Salvage readable data from a corrupted SQLite database and rebuild it with working FTS5 indexes. | `1.0.0` |
 | [`systematic-debugging`](skills/systematic-debugging/SKILL.md) | Find the root cause before fixing a bug, test failure or crash. | `1.3.0` |
+| [`tealdeer`](skills/tealdeer/SKILL.md) | Serve tldr's example-driven man pages as the cache-first client — empty-cache rc 1 split between the stderr error and the stdout tips, the 30-day dir-mtime staleness warning silenced only by warn_cache_age never, multi-word args joined into one hyphenated page, -p override hiding unlisted platforms while common stays searchable, -L limited to downloaded languages, custom .page.md pages overriding cache pages, auto-update firing on render, and the empty-PAGER segfault under --pager. Measured live on tealdeer 1.9.1. | `1.0.0` |
 | [`test-driven-development`](skills/test-driven-development/SKILL.md) | Write the failing test first; RED–GREEN–REFACTOR and the tests that can never fail. | `1.0.0` |
 | [`tokei`](skills/tokei/SKILL.md) | Instant per-language code counts — the sort-direction trap (`-s` descending, `-r` ascending), Markdown prose as comments with fenced code as embedded-language rows, `.gitignore` only inside git vs `.ignore`/`.tokeignore` everywhere, the silent-empty `--types` miss, per-build serialization banner, `head`-pipe panics and the broken `-i` in 13.0.0 builds. Measured live on tokei 15.0.0. | `1.0.0` |
 | [`trace-mcp`](skills/trace-mcp/SKILL.md) | Precomputed code intelligence over MCP — symbol search, outlines, call/import graphs, change impact, quality gates, security scans; presets/deferral surface and load-tools-then-batch doctrine; measured live on trace-mcp 3.38.0. | `1.0.0` |

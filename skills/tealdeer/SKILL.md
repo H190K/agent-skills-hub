@@ -4,7 +4,7 @@ version: 1.0.0
 author: H190K
 license: MIT
 platforms: [linux, macos, windows]
-description: "Use when a tldr client lookup breaks or example-driven man pages are needed — cache-first flow with rc-1 split between stderr error and stdout tips, the 30-day dir-mtime staleness warning silencable only via warn_cache_age never, multi-word args joined into one hyphenated page, -p override hiding unlisted platforms while common stays searchable, -L limited to downloaded languages, TEALDEER_* env names, custom .page.md pages overriding cache pages, auto-update firing on render, and an empty-PAGER segfault under --pager. Measured live on tealdeer 1.9.1."
+description: "Use when a tldr client lookup breaks or example-driven man pages are needed — cache-first flow with error on stderr and tips on stdout, the 30-day dir-mtime staleness warning silenced only via warn_cache_age never, multi-word args joined into one hyphenated page, -p override hiding unlisted platforms, -L limited to downloaded languages, TEALDEER_* envs, custom .page.md overriding cache pages, auto-update firing on render, and the empty-PAGER segfault under --pager. Measured on tealdeer 1.9.1."
 ---
 
 # tealdeer — the cache-first tldr client, measured
