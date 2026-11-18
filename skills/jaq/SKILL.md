@@ -187,6 +187,8 @@ if [ "$BIN" = /dev/null ]; then
   BIN="$WORK/jaq"
   curl -sLo "$BIN" https://github.com/01mf02/jaq/releases/download/v3.1.2/jaq-x86_64-unknown-linux-musl
   chmod +x "$BIN"
+  echo "a469f5e6980fe2c7e73dce0a1db5176eb4a717b933b77fa32fa1da7847c12232  $BIN" | sha256sum -c - >/dev/null \
+    || { echo "FAIL: sha256 mismatch"; exit 1; }
 fi
 F=0; chk() { local d="$1" got="$2" want="$3"; if [ "$got" != "$want" ]; then
   echo "FAIL: $d (got '$got', want '$want')"; F=$((F+1)); fi; }
@@ -195,7 +197,7 @@ chk version "$("$BIN" --version)" "jaq 3.1.2"
 chk bigint "$("$BIN" -n '9223372036854775807 + 1' 2>/dev/null)" "9223372036854775808"
 chk nan    "$("$BIN" -n 'nan' 2>/dev/null)" "NaN"
 chk tojson-nan "$("$BIN" -n 'nan | tojson' 2>/dev/null)" '"NaN"'
-chk strict "$("$BIN" -n '[1/0] | walk(if type == "number" and (isnan or isinfinite) then null else . end)' 2>/dev/null)" '[null]'
+chk strict "$("$BIN" -n '[1/0] | walk(if type == "number" and (isnan or isinfinite) then null else . end)' -c 2>/dev/null)" '[null]'
 
 printf '{"a":1}\n' > "$WORK/a.json"; printf '{"a":2}\n' > "$WORK/b.json"
 chk slurp-per-file "$("$BIN" -c -s . "$WORK/a.json" "$WORK/b.json" | wc -l)" "2"
@@ -208,7 +210,8 @@ chk s-dotall "$("$BIN" -n '"a\nb" | test("a.b"; "s")' 2>/dev/null)" "true"
 chk tocsv "$("$BIN" -n '[1,2], [3,4] | tocsv' -r 2>/dev/null | tr '\n' ' ')" "1,2 3,4 "
 printf '<a x="1"><b>2</b>tail</a>' | "$BIN" --from xml -c --to xml > "$WORK/x.out" 2>/dev/null
 chk xml-roundtrip "$(cat "$WORK/x.out")" '<a x="1"><b>2</b>tail</a>'
-"$BIN" -n '"a: 1" | toyaml' -r > "$WORK/y.out" 2>/dev/null; chk toyaml "$(cat "$WORK/y.out")" 'a: 1'
+chk toyaml-flow "$("$BIN" -n '{a: 1} | toyaml' -r 2>/dev/null)" '{a: 1}'
+printf -- '{"a":1}\n' | "$BIN" --to yaml > "$WORK/y.out" 2>/dev/null; chk toyaml-docmarkers "$(head -1 "$WORK/y.out")" '---'
 "$BIN" -n -- '-0' > "$WORK/d.out" 2>/dev/null; chk dashdash-neg "$(cat "$WORK/d.out")" "0"
 "$BIN" -n '-0' >/dev/null 2>&1; chk bare-neg-rc "$?" "2"
 chk tobytes "$("$BIN" -n '"x" | tobytes' 2>/dev/null)" 'b"x"'
