@@ -1,6 +1,6 @@
 ---
 name: fx
-description: Use when a terminal session or script must view, query, convert, edit or validate JSON — exploring large files in the TUI, extracting or filtering fields, sorting or grouping, converting YAML/TOML/XML/HTML/EDN/MAML input, editing a file in place, or when jq-style pipelines hit undefined results, BigInt values or lexicographic sorting traps. Covers the viewer-without-TTY panic, the JavaScript expression language, save() and viewer tree editing, env knobs, and the version wall. Behaviors measured live.
+description: Use when a terminal session or script must view, query, convert, edit or validate JSON — exploring large files in the TUI, extracting or filtering fields, sorting or grouping, converting YAML/TOML/XML/HTML/EDN/MAML input, editing a file in place, or when jq-style pipelines hit undefined results, BigInt values or lexicographic sort traps. Covers the no-TTY viewer panic, the JavaScript expression language, save(), viewer tree editing, env knobs, and the version wall. Behaviors measured live.
 version: 1.0.0
 author: H190K
 license: MIT
