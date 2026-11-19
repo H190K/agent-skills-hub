@@ -66,7 +66,7 @@ Three styles of argument, all measured:
 ```bash
 fx data.json '.items[0].a'          # dot path (no TTY, prints result headlessly)
 fx data.json 'x => x.items.map(i => i.a)'   # lambda over the whole input
-fx data.json 'sortBy(y => y.n)'     # curried reducer applied to the input
+printf '%s' '[{"n":3},{"n":1},{"n":2}]' | fx 'sortBy(y => y.n)'   # curried reducer applied to the input (array input — an object throws 'Cannot sort object')
 ```
 
 - Dot paths: `.a.b`, `.[0]`, `.items[0].a`; `.a[]` iterates arrays via flatMap. A bare `.`,
