@@ -21,7 +21,7 @@ echo "24f397c733add5390fdceee3a2088588ab0d5f944ce00d34cb7029b888cf2db4  gc.tar.g
 tar xzf gc.tar.gz &&
 mkdir -p "$HOME/.local/bin" &&
 install -m 755 git-cliff-2.14.2/git-cliff "$HOME/.local/bin/git-cliff" &&
-git-cliff --version
+"$HOME/.local/bin/git-cliff" --version
 ```
 
 Alternative package source: `conda install -c conda-forge git-cliff` (pulls the shared libs above). The release tarball also carries shell completions, a man page, and two helper binaries (`git-cliff-completions`, `git-cliff-mangen`). `cargo install git-cliff` works if a Rust toolchain exists.
@@ -94,7 +94,7 @@ Overrides merge at field level, measured: a three-line config containing only `[
 
 ## Gotchas — measured on 2.14.2
 
-- **Non-conventional and merge commits vanish silently.** `random commit message` and `Merge branch 'feat-x'` both dropped from the changelog while rc stayed 0 — the only trace is a stderr warning `N commit(s) were skipped due to parse error(s)`. `-vv` names each: `Commit did not match conventional format: 'Missing type in the commit summary, expected 'type: description''` plus the summary. If your history includes merges or legacy subjects, read stderr or expect holes.
+- **Non-conventional and merge commits vanish silently.** `random commit message` and `Merge branch 'feat-x'` both dropped from the changelog while rc stayed 0 — the only trace is a stderr warning `N commit(s) were skipped due to parse error(s)` (still ANSI color-coded even when piped). `-vv` names each: `Commit did not match conventional format: 'Missing type in the commit summary, expected 'type: description''` plus the summary. If your history includes merges or legacy subjects, read stderr or expect holes.
 - **Fail-open config fetch.** `-c nope.toml` (missing) and `-c https://host/nope.toml --http-timeout 2` (unreachable) both WARN and fall back to the built-in default at rc 0 — a typo'd config path renders a *default-looking* changelog with nothing failing.
 - **The prepend marker.** `-p` inserts fresh content above the target file; if the file contains `<!-- git-cliff: end of header -->` (the marker in the `-i` template's header), the header region plus marker are removed first. The rendered output does *not* re-emit the marker, so repeated `-p` on a marker-less file appends duplicate sections — for pipelines prefer wholesale `-o` regeneration.
 - **Dates come from commits, not tags.** Section dates are the tagged commit's date (`## [0.1.0] - 2026-11-02` for a tag created today pointing at a 2026-11-02 commit); unreleased and bumped sections show the current date.
