@@ -19,6 +19,7 @@ cd "$(mktemp -d)" &&
 curl -f -sL -o gc.tar.gz "https://github.com/orhun/git-cliff/releases/download/v2.14.2/git-cliff-2.14.2-x86_64-unknown-linux-gnu.tar.gz" &&
 echo "24f397c733add5390fdceee3a2088588ab0d5f944ce00d34cb7029b888cf2db4  gc.tar.gz" | sha256sum -c &&
 tar xzf gc.tar.gz &&
+mkdir -p "$HOME/.local/bin" &&
 install -m 755 git-cliff-2.14.2/git-cliff "$HOME/.local/bin/git-cliff" &&
 git-cliff --version
 ```
