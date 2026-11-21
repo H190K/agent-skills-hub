@@ -14,16 +14,16 @@ description: "Use when setting up or debugging git hooks with lefthook - install
 
 ```bash
 cd "$(mktemp -d)" &&
-curl -f -sL -o lh.gz "https://github.com/evilmartians/lefthook/releases/download/v2.2.2/lefthook_2.2.2_Linux_x86_64.gz" &&
+curl -f -sL -O "https://github.com/evilmartians/lefthook/releases/download/v2.2.2/lefthook_2.2.2_Linux_x86_64.gz" &&
 curl -f -sL -o lefthook_checksums.txt "https://github.com/evilmartians/lefthook/releases/download/v2.2.2/lefthook_checksums.txt" &&
 grep -F "lefthook_2.2.2_Linux_x86_64.gz" lefthook_checksums.txt | sha256sum -c - &&
-gunzip -kf lh.gz &&
+gunzip -kf lefthook_2.2.2_Linux_x86_64.gz &&
 mkdir -p "$HOME/.local/bin" &&
 install -m 755 lefthook_2.2.2_Linux_x86_64 "$HOME/.local/bin/lefthook" &&
 "$HOME/.local/bin/lefthook" version
 ```
 
-The release carries per-arch `.gz` payloads plus `.deb`/`.rpm`/`.apk` and a `lefthook_checksums.txt` sidecar; sha256 of the 2.2.2 x86_64 payload starts `2b8d7fd5`. Other measured/documented sources: `conda install -c conda-forge lefthook` (2.2.2 there too — cross-checked byte-identical `--help`), npm `@evilmartians/lefthook` (the hook wrapper probes several `node_modules` layouts itself), `go install`, brew. Invoke the binary by installed path in scripts; nothing here assumes PATH membership.
+The release carries per-arch `.gz` payloads plus `.deb`/`.rpm`/`.apk` and a `lefthook_checksums.txt` sidecar; sha256 of the 2.2.2 x86_64 payload starts `2b8d7fd5`. Note the `-c -` verify names the upstream asset (`lefthook_2.2.2_Linux_x86_64.gz`) — download under its upstream name or the check reads nothing. Other measured/documented sources: `conda install -c conda-forge lefthook` (2.2.2 there too — cross-checked byte-identical `--help`), npm `@evilmartians/lefthook` (the hook wrapper probes several `node_modules` layouts itself), `go install`, brew. Invoke the binary by installed path in scripts; nothing here assumes PATH membership.
 
 ## How hooks resolve the binary — read before deleting it
 
@@ -124,10 +124,10 @@ Install the release binary with checksum verification:
 
 ```bash
 cd "$(mktemp -d)" &&
-curl -f -sL -o lh.gz "https://github.com/evilmartians/lefthook/releases/download/v2.2.2/lefthook_2.2.2_Linux_x86_64.gz" &&
+curl -f -sL -O "https://github.com/evilmartians/lefthook/releases/download/v2.2.2/lefthook_2.2.2_Linux_x86_64.gz" &&
 curl -f -sL -o lefthook_checksums.txt "https://github.com/evilmartians/lefthook/releases/download/v2.2.2/lefthook_checksums.txt" &&
 grep -F "lefthook_2.2.2_Linux_x86_64.gz" lefthook_checksums.txt | sha256sum -c - &&
-gunzip -kf lh.gz &&
+gunzip -kf lefthook_2.2.2_Linux_x86_64.gz &&
 mkdir -p "$HOME/.local/bin" &&
 install -m 755 lefthook_2.2.2_Linux_x86_64 "$HOME/.local/bin/lefthook" &&
 "$HOME/.local/bin/lefthook" version &&
