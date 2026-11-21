@@ -39,6 +39,7 @@ Some skills originate from other authors. Their original attribution is preserve
 | `jaq` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against jaq 3.1.2, jaq 2.3.0, and jq 1.8.2) | MIT |
 | `jq` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against jq 1.8.2) | MIT |
 | `just` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against just 1.59.0 and the Ubuntu 1.21.0 distro build) | MIT |
+| `lefthook` | 1.0.0 | Arkweid / Evil Martians (evilmartians/lefthook; original — behavior verified live against the official lefthook 2.2.2 release binary) | MIT |
 | `mcporter` | 1.0.0 | openclaw/openclaw (OpenClaw Foundation; adapted from its mcporter skill, rewritten against openclaw/mcporter's own docs and its measured CLI) | MIT |
 | `merge-reconciler` | 1.0.0 | Hasan Albehadili (h190k) | MIT |
 | `miller` | 1.0.0 | Hasan Albehadili (h190k; original — behavior verified live against miller 6.22.0, cross-checked on the Ubuntu 24.04 miller 6.11.0 build; upstream BSD-2-Clause, skill text is original) | MIT |

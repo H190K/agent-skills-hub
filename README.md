@@ -4,7 +4,7 @@ Drop-in **agent skills** for Claude Code, OpenAI Codex, and OpenCode. One source
 folder per skill, in the `SKILL.md` format all three agents already read.
 
 - **Pure markdown.** No scripts, no build step, no dependencies. Clone it and read it.
-- **66 skills**, each self-contained and framework-neutral
+- **67 skills**, each self-contained and framework-neutral
 - **MIT licensed**, upstream authors credited per skill
 - **Kept current** — reviewed and revised regularly; see [How this stays current](#how-this-stays-current)
 
@@ -43,6 +43,7 @@ folder per skill, in the `SKILL.md` format all three agents already read.
 | [`jaq`](skills/jaq/SKILL.md) | jq clone in Rust — same filter language with exact big-integer math, in-place editing, a REPL and a `--from/--to` format system (YAML, TOML, XML, CSV/TSV, CBOR); the jq-contract divergences that bite: XJON `NaN`/`Infinity` output `--to json` does not sanitize, per-file `-s`, streaming `fromjson` that returns junk-tolerant successes and prints partial stdout before rc 5, Rust-regex dialect (no look-around, `s` means dotall). Measured live on jaq 3.1.2 with a jaq 2.3.0 version wall. | `1.0.0` |
 | [`jq`](skills/jq/SKILL.md) | Query and reshape JSON on the command line — stream model, the `//` alternative, exit codes, argument passing, conversion filters; measured live on jq 1.8.2. | `1.0.0` |
 | [`just`](skills/just/SKILL.md) | Save and run project commands from a justfile — recipe syntax, per-line `/bin/sh` semantics, parameters and variables, dotenv (off by default), attributes and modules, `--fmt`/`--list`/`--evaluate`/`--dump` inspection; release 1.59 vs distro 1.21 traps. | `1.0.0` |
+| [`lefthook`](skills/lefthook/SKILL.md) | Manage git hooks — install/uninstall/skip mechanics, file templates and their v2 traps (`{files}` silently skips the whole command, `_json` templates pass through literally), piped vs parallel exit codes, `stage_fixed` limits, `core.hooksPath` fail-closed refusal, inert v1 dict-form skips; measured live on the official 2.2.2 release binary. | `1.0.0` |
 | [`mcporter`](skills/mcporter/SKILL.md) | Drive MCP servers from the shell — list tools, one-shot calls, OAuth seeding, the `serve` bridge, typed clients, record/replay. | `1.0.0` |
 | [`merge-reconciler`](skills/merge-reconciler/SKILL.md) | Resolve a merge conflict between two agents' branches as a neutral third party — hunk classes, impartiality contract, both-sides-preserved verification, rerere for repeat conflicts. | `1.0.0` |
 | [`miller`](skills/miller/SKILL.md) | Stream-edit and convert CSV, TSV, JSON, JSONL, DKVP, NIDX, and XTAB with typed records and RFC4180 quoting — type-inference edges, the inverted `join -f` flag, strict schema fail-closed, `-I` in-place edits, one-flag-per-line MLRRC defaults. | `1.0.0` |
